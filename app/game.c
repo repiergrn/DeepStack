@@ -3,6 +3,7 @@
 #include "stm32g4_gpio.h"
 
 #include "rectangle.h"
+#include "tft_ili9341/stm32g4_xpt2046.h"
 
 bool game_init(Game* game) {
     if (game == NULL) {
@@ -58,12 +59,21 @@ void game_reset(Game* game) {
     rectangles_reset(&game->rects);
 }
 
-static bool handle_touch(Game *game, bool touched, bool *touched_before) {
+static bool handle_touch(Game *game, bool touched, bool *touched_before, uint32_t *last_touch_tick) {
     if (!game) {
-    	return false;
+        return false;
     }
 
     if (touched && !(*touched_before)) {
+        uint32_t now = HAL_GetTick();
+
+        if (now - *last_touch_tick < 300) {
+            *touched_before = touched;
+            return true;
+        }
+
+        *last_touch_tick = now;
+
         Rectangle moving = {
             game->rect_y,
             (uint16_t)(game->rect_y + game->rect_length)
@@ -87,7 +97,7 @@ static bool handle_touch(Game *game, bool touched, bool *touched_before) {
 
         game->score++;
 
-        ILI9341_Fill(ILI9341_COLOR_WHITE);
+        ILI9341_Fill(0x0010);
         rectangles_draw_all(&game->rects);
     }
 
@@ -116,10 +126,10 @@ static void update_movement(Game *game) {
 static void hide_rect(Game *game) {
     ILI9341_DrawFilledRectangle(
         game->rect_x,
-        game->rect_y,
+        game->rect_y > 0 ? game->rect_y - 1 : 0,
         game->rect_x + game->height,
-        game->rect_y + game->rect_length,
-        ILI9341_COLOR_WHITE
+        game->rect_y + game->rect_length + 1,
+        0x0010
     );
 }
 
@@ -129,23 +139,35 @@ static void render_rect(Game *game) {
         game->rect_y,
         game->rect_x + game->height,
         game->rect_y + game->rect_length,
-        ILI9341_COLOR_BLACK
+        ILI9341_COLOR_CYAN
     );
 }
 
-void game_play(Game *game) {
+void game_play(Game *game, GameDifficulty difficulty) {
     if (game == NULL) {
         return;
     }
 
-    // ILI9341_Fill(ILI9341_COLOR_WHITE);
+    ILI9341_Fill(0x0010);
     rectangles_draw_all(&game->rects);
     bool touched_before = false;
+    uint32_t last_touch_tick = 0;
+
+    uint32_t base_delay;
+    if (difficulty == DIFFICULTY_EASY)        base_delay = 12;
+    else if (difficulty == DIFFICULTY_MEDIUM) base_delay = 7;
+    else                                       base_delay = 3;
+
+    uint32_t min_delay;
+    if (difficulty == DIFFICULTY_EASY)        min_delay = 4;
+    else if (difficulty == DIFFICULTY_MEDIUM) min_delay = 1;
+    else                                       min_delay = 0;
 
     for(;;) {
-        bool touched = !HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5);
+        int16_t tx, ty;
+        bool touched = XPT2046_getMedianCoordinates(&tx, &ty, XPT2046_COORDINATE_SCREEN_RELATIVE);
 
-        if (!handle_touch(game, touched, &touched_before)) {
+        if (!handle_touch(game, touched, &touched_before, &last_touch_tick)) {
             return;
         }
 
@@ -153,6 +175,9 @@ void game_play(Game *game) {
         update_movement(game);
         render_rect(game);
 
-        HAL_Delay(10);
+        uint32_t reduction = game->score / 2;
+        uint32_t delay = (base_delay > reduction + min_delay) ? base_delay - reduction : min_delay;
+
+        if (delay > 0) HAL_Delay(delay);
     }
 }

@@ -3,7 +3,7 @@
 
 #include "game.h"
 
-void show_score_screen(Game *game);
-void show_game_menu();
+void show_score_screen(Game *game, GameDifficulty difficulty);
+GameDifficulty show_game_menu(void);
 
 #endif /* MENU_H_ */

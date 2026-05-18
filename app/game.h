@@ -13,6 +13,12 @@ typedef enum {
     STATE_SCORE
 } GameState;
 
+typedef enum {
+    DIFFICULTY_EASY,
+    DIFFICULTY_MEDIUM,
+    DIFFICULTY_HARD
+} GameDifficulty;
+
 typedef struct {
     uint16_t rect_y;
     uint16_t rect_x;
@@ -30,6 +36,6 @@ typedef struct {
 bool game_init(Game* game);
 void game_free(Game* game);
 void game_reset(Game* game);
-void game_play(Game* game);
+void game_play(Game* game, GameDifficulty difficulty);
 
 #endif /* GAME_H_ */

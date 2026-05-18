@@ -26,10 +26,9 @@ void board_init(void) {
         GPIO_NO_AF
     );
 
+    XPT2046_init();
+
     ILI9341_Init();
     ILI9341_Rotate(ILI9341_Orientation_Landscape_2);
     ILI9341_DisplayOn();
-    ILI9341_Fill(ILI9341_COLOR_WHITE);
-
-    XPT2046_init();
 }

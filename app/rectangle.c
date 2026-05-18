@@ -27,7 +27,7 @@ bool rectangles_init(Rectangles* rects) {
     for (uint16_t i = 0; i < RECTANGLES_DEFAULT_COUNT; i++) {
         rectangles_push(rects, (Rectangle){
             RECTANGLE_DEFAULT_Y0,
-			RECTANGLE_DEFAULT_Y0 + RECTANGLE_DEFAULT_SIZE
+            RECTANGLE_DEFAULT_Y0 + RECTANGLE_DEFAULT_SIZE
         });
     }
 
@@ -56,11 +56,11 @@ void rectangles_reset(Rectangles* rects) {
     rects->begin = 0;
 
     for (uint16_t i = 0; i < RECTANGLES_DEFAULT_COUNT; i++) {
-		rectangles_push(rects, (Rectangle){
-			RECTANGLE_DEFAULT_Y0,
-			RECTANGLE_DEFAULT_Y0 + RECTANGLE_DEFAULT_SIZE
-		});
-	}
+        rectangles_push(rects, (Rectangle){
+            RECTANGLE_DEFAULT_Y0,
+            RECTANGLE_DEFAULT_Y0 + RECTANGLE_DEFAULT_SIZE
+        });
+    }
 }
 
 bool rectangles_push(Rectangles* rects, Rectangle rect) {
@@ -138,7 +138,6 @@ void rectangles_draw_all(const Rectangles* rects) {
     }
 
     for (uint16_t i = 0; i < rects->size; i++) {
-    	printf("Rendered");
         uint16_t idx = rectangles_index(rects, i);
         const Rectangle* rect = &rects->data[idx];
 
@@ -149,7 +148,7 @@ void rectangles_draw_all(const Rectangles* rects) {
             rect->y_0,
             x1,
             rect->y_1,
-            RECTANGLE_DEFAULT_COLOR
+            ILI9341_COLOR_CYAN
         );
     }
 }
