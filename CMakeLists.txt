@@ -22,7 +22,7 @@ set(CMAKE_C_FLAGS_RELEASE "-Os" CACHE STRING "" FORCE)
 set(CMAKE_ASM_FLAGS "${ARCH} -x assembler-with-cpp" CACHE STRING "" FORCE)
 set(CMAKE_EXE_LINKER_FLAGS "${ARCH} -Wl,--gc-sections -Wl,--print-memory-usage -Wl,-Map=${CMAKE_BINARY_DIR}/${PROJECT_NAME}.map -T${LINKER_SCRIPT} -specs=nano.specs -specs=nosys.specs" CACHE STRING "" FORCE)
 
-set(APP app/main.c app/board.c app/game.c app/menu.c app/rectangle.c)
+set(APP app/main.c app/board.c app/game.c app/menu.c app/rectangle.c app/flash_storage.c)
 set(CORE core/Src/system_stm32g4xx.c core/Src/stm32g4xx_it.c core/Src/syscalls.c core/Src/sysmem.c core/Startup/bootloader.c)
 file(GLOB_RECURSE HAL "drivers/stm32g4xx_hal/Src/*.c")
 file(GLOB_RECURSE BSP "drivers/bsp/stm32g4_*.c")
