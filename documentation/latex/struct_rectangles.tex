@@ -1,0 +1,36 @@
+\doxysection{Référence de la structure Rectangles}
+\hypertarget{struct_rectangles}{}\label{struct_rectangles}\index{Rectangles@{Rectangles}}
+
+
+File circulaire de rectangles (pile de pièces capturées).  
+
+
+
+
+{\ttfamily \+\#include $<$rectangle.\+h$>$}
+
+\doxysubsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_rectangles_adf88ab2173d0b0c842a920d8bc083940}\label{struct_rectangles_adf88ab2173d0b0c842a920d8bc083940} 
+uint16\+\_\+t {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em Capacité totale allouée. \end{DoxyCompactList}\item 
+\Hypertarget{struct_rectangles_a212a3aa83d92ba49e517778e83ca3b9f}\label{struct_rectangles_a212a3aa83d92ba49e517778e83ca3b9f} 
+uint16\+\_\+t {\bfseries size}
+\begin{DoxyCompactList}\small\item\em Nombre actuel de rectangles dans la pile. \end{DoxyCompactList}\item 
+\Hypertarget{struct_rectangles_a7c6df66e847ed6ff008ecff5438f131d}\label{struct_rectangles_a7c6df66e847ed6ff008ecff5438f131d} 
+uint16\+\_\+t {\bfseries begin}
+\begin{DoxyCompactList}\small\item\em Index du rectangle le plus ancien (premier de la file circulaire). \end{DoxyCompactList}\item 
+\Hypertarget{struct_rectangles_a8934a29bc3fbf357ff4ae9ba9508cfa8}\label{struct_rectangles_a8934a29bc3fbf357ff4ae9ba9508cfa8} 
+\doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*} {\bfseries data}
+\begin{DoxyCompactList}\small\item\em Pointeur vers les données de rectangle allouées dynamiquement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+File circulaire de rectangles (pile de pièces capturées). 
+
+Gère une pile dynamique de rectangles avec une sémantique de tampon circulaire pour une gestion efficace de la mémoire. 
+
+La documentation de cette structure a été générée à partir du fichier suivant :\+\begin{DoxyCompactItemize}
+\item 
+app/\+\doxymbox{\hyperlink{rectangle_8h}{rectangle.\+h}}\end{DoxyCompactItemize}

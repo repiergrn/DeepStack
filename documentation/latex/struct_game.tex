@@ -1,0 +1,45 @@
+\doxysection{Référence de la structure Game}
+\hypertarget{struct_game}{}\label{struct_game}\index{Game@{Game}}
+
+
+Représente l\textquotesingle{}état complet du jeu.  
+
+
+
+
+{\ttfamily \+\#include $<$game.\+h$>$}
+
+\doxysubsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_game_ad7bbb9fb6717e7ef4b8d956d02d9e362}\label{struct_game_ad7bbb9fb6717e7ef4b8d956d02d9e362} 
+uint16\+\_\+t {\bfseries rect\+\_\+y}
+\begin{DoxyCompactList}\small\item\em Coordonnée Y du rectangle en mouvement. \end{DoxyCompactList}\item 
+\Hypertarget{struct_game_a36e3daded9a7ecd6825273c8d3b69ad4}\label{struct_game_a36e3daded9a7ecd6825273c8d3b69ad4} 
+uint16\+\_\+t {\bfseries rect\+\_\+x}
+\begin{DoxyCompactList}\small\item\em Coordonnée X du rectangle en mouvement. \end{DoxyCompactList}\item 
+\Hypertarget{struct_game_a70d42f0a963b9e2627c6f36419340858}\label{struct_game_a70d42f0a963b9e2627c6f36419340858} 
+uint16\+\_\+t {\bfseries rect\+\_\+length}
+\begin{DoxyCompactList}\small\item\em Largeur (longueur) du rectangle en mouvement. \end{DoxyCompactList}\item 
+\Hypertarget{struct_game_acb786feb815b445f696b502846320e18}\label{struct_game_acb786feb815b445f696b502846320e18} 
+uint16\+\_\+t {\bfseries height}
+\begin{DoxyCompactList}\small\item\em Hauteur des rectangles empilés. \end{DoxyCompactList}\item 
+\Hypertarget{struct_game_a10be199b2b0a3c50d1b70145417f592c}\label{struct_game_a10be199b2b0a3c50d1b70145417f592c} 
+uint16\+\_\+t {\bfseries score}
+\begin{DoxyCompactList}\small\item\em Score actuel du jeu (nombre d\textquotesingle{}empilements réussis). \end{DoxyCompactList}\item 
+\Hypertarget{struct_game_a17daa2c253decd43501e26a1538b75c0}\label{struct_game_a17daa2c253decd43501e26a1538b75c0} 
+bool {\bfseries toright}
+\begin{DoxyCompactList}\small\item\em Drapeau de direction du mouvement (true = se déplace à droite/\+bas). \end{DoxyCompactList}\item 
+\Hypertarget{struct_game_ad89e3ea29426ad4b1e762db13b36f27a}\label{struct_game_ad89e3ea29426ad4b1e762db13b36f27a} 
+\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} {\bfseries rects}
+\begin{DoxyCompactList}\small\item\em Pile des rectangles capturés. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représente l\textquotesingle{}état complet du jeu. 
+
+Contient toutes les informations nécessaires pour exécuter le jeu, y compris la position du rectangle en mouvement, l\textquotesingle{}orientation, la pile des rectangles capturés et le score actuel. 
+
+La documentation de cette structure a été générée à partir du fichier suivant :\+\begin{DoxyCompactItemize}
+\item 
+app/\+\doxymbox{\hyperlink{game_8h}{game.\+h}}\end{DoxyCompactItemize}

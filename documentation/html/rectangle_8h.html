@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeepStack: Référence du fichier app/rectangle.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DeepStack
+   </div>
+   <div id="projectbrief">Jeu Stack - Jeu embarqué pour microcontrôleur STM32G431KB</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('rectangle_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier rectangle.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interface de gestion des rectangles et de la pile.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;tft_ili9341/stm32g4_ili9341.h&quot;</code><br />
+</div>
+<p><a href="rectangle_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Rectangle" id="r_Rectangle"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_rectangle.html">Rectangle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente un seul rectangle avec une étendue verticale.  <a href="struct_rectangle.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:Rectangles" id="r_Rectangles"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_rectangles.html">Rectangles</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">File circulaire de rectangles (pile de pièces capturées).  <a href="struct_rectangles.html#details">Plus de détails...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac143750b5d38906781716299bbc73038" id="r_ac143750b5d38906781716299bbc73038"><td class="memItemLeft"><a id="ac143750b5d38906781716299bbc73038" name="ac143750b5d38906781716299bbc73038"></a>
+#define&#160;</td><td class="memItemRight"><b>RECTANGLES_DEFAULT_CAPACITY</b>&#160;&#160;&#160;18</td></tr>
+<tr class="memdesc:ac143750b5d38906781716299bbc73038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capacité par défaut de la pile de rectangles. <br /></td></tr>
+<tr class="memitem:a0a642e7e905b4eba50e4e5f910e64cde" id="r_a0a642e7e905b4eba50e4e5f910e64cde"><td class="memItemLeft"><a id="a0a642e7e905b4eba50e4e5f910e64cde" name="a0a642e7e905b4eba50e4e5f910e64cde"></a>
+#define&#160;</td><td class="memItemRight"><b>RECTANGLE_DEFAULT_Y0</b>&#160;&#160;&#160;70</td></tr>
+<tr class="memdesc:a0a642e7e905b4eba50e4e5f910e64cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordonnée Y initiale pour le rectangle par défaut. <br /></td></tr>
+<tr class="memitem:aff377b3a50f59b35df073a9886247188" id="r_aff377b3a50f59b35df073a9886247188"><td class="memItemLeft"><a id="aff377b3a50f59b35df073a9886247188" name="aff377b3a50f59b35df073a9886247188"></a>
+#define&#160;</td><td class="memItemRight"><b>RECTANGLE_DEFAULT_SIZE</b>&#160;&#160;&#160;100</td></tr>
+<tr class="memdesc:aff377b3a50f59b35df073a9886247188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille (largeur) par défaut des rectangles. <br /></td></tr>
+<tr class="memitem:ad8ebde58490e59be04f9555ea6a6cc1e" id="r_ad8ebde58490e59be04f9555ea6a6cc1e"><td class="memItemLeft"><a id="ad8ebde58490e59be04f9555ea6a6cc1e" name="ad8ebde58490e59be04f9555ea6a6cc1e"></a>
+#define&#160;</td><td class="memItemRight"><b>RECTANGLE_DEFAULT_COLOR</b>&#160;&#160;&#160;ILI9341_COLOR_BLACK</td></tr>
+<tr class="memdesc:ad8ebde58490e59be04f9555ea6a6cc1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couleur par défaut pour les rectangles. <br /></td></tr>
+<tr class="memitem:a6d85a31494c63423b2390fe8c3993dff" id="r_a6d85a31494c63423b2390fe8c3993dff"><td class="memItemLeft"><a id="a6d85a31494c63423b2390fe8c3993dff" name="a6d85a31494c63423b2390fe8c3993dff"></a>
+#define&#160;</td><td class="memItemRight"><b>RECTANGLE_DEFAULT_HEIGHT</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a6d85a31494c63423b2390fe8c3993dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hauteur (épaisseur) par défaut des rectangles. <br /></td></tr>
+<tr class="memitem:a8a7251d4ee2c4836b89e8f8ce287ae53" id="r_a8a7251d4ee2c4836b89e8f8ce287ae53"><td class="memItemLeft"><a id="a8a7251d4ee2c4836b89e8f8ce287ae53" name="a8a7251d4ee2c4836b89e8f8ce287ae53"></a>
+#define&#160;</td><td class="memItemRight"><b>RECTANGLES_DEFAULT_COUNT</b>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:a8a7251d4ee2c4836b89e8f8ce287ae53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de rectangles par défaut créés à l'initialisation. <br /></td></tr>
+<tr class="memitem:ab5679ac5acebbbcf1afa1856df77e0c9" id="r_ab5679ac5acebbbcf1afa1856df77e0c9"><td class="memItemLeft"><a id="ab5679ac5acebbbcf1afa1856df77e0c9" name="ab5679ac5acebbbcf1afa1856df77e0c9"></a>
+#define&#160;</td><td class="memItemRight"><b>RECTANGLES_TOTAL_HEIGHT</b>&#160;&#160;&#160;(<a class="el" href="#a6d85a31494c63423b2390fe8c3993dff">RECTANGLE_DEFAULT_HEIGHT</a> * <a class="el" href="#ac143750b5d38906781716299bbc73038">RECTANGLES_DEFAULT_CAPACITY</a>)</td></tr>
+<tr class="memdesc:ab5679ac5acebbbcf1afa1856df77e0c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hauteur totale de tous les rectangles empilés possibles. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:a8725f4b1f6bb4ae6a2b38d6273bb61af" id="r_a8725f4b1f6bb4ae6a2b38d6273bb61af"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a8725f4b1f6bb4ae6a2b38d6273bb61af">RectAddResult</a> { <a class="el" href="#a8725f4b1f6bb4ae6a2b38d6273bb61afa71ccfcbdaafa354ae370ad570cd4088a">RECT_ADD_NONE</a>
+, <a class="el" href="#a8725f4b1f6bb4ae6a2b38d6273bb61afa8801d0c367fdacf41bcb6c29272190fb">RECT_ADD_SUCCESS</a>
+, <a class="el" href="#a8725f4b1f6bb4ae6a2b38d6273bb61afa7ca5c0c8715971fb56170d44007a5341">RECT_ADD_ERROR</a>
+ }</td></tr>
+<tr class="memdesc:a8725f4b1f6bb4ae6a2b38d6273bb61af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codes de résultat pour les opérations d'ajout de rectangles.  <a href="#a8725f4b1f6bb4ae6a2b38d6273bb61af">Plus de détails...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ae248690461be5d02e47d1bbb37a330de" id="r_ae248690461be5d02e47d1bbb37a330de"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae248690461be5d02e47d1bbb37a330de">rectangles_init</a> (<a class="el" href="struct_rectangles.html">Rectangles</a> *rects)</td></tr>
+<tr class="memdesc:ae248690461be5d02e47d1bbb37a330de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la pile de rectangles.  <br /></td></tr>
+<tr class="memitem:a90721d6f3a6848c50b8d4ec83cf54765" id="r_a90721d6f3a6848c50b8d4ec83cf54765"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a90721d6f3a6848c50b8d4ec83cf54765">rectangles_free</a> (<a class="el" href="struct_rectangles.html">Rectangles</a> *rects)</td></tr>
+<tr class="memdesc:a90721d6f3a6848c50b8d4ec83cf54765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère toutes les ressources allouées à la pile de rectangles.  <br /></td></tr>
+<tr class="memitem:a76b5911ef18623f17ea82d7767bc308f" id="r_a76b5911ef18623f17ea82d7767bc308f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a76b5911ef18623f17ea82d7767bc308f">rectangles_reset</a> (<a class="el" href="struct_rectangles.html">Rectangles</a> *rects)</td></tr>
+<tr class="memdesc:a76b5911ef18623f17ea82d7767bc308f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réinitialise la pile de rectangles à son état initial.  <br /></td></tr>
+<tr class="memitem:a060b68e8f70d500b252cc1141032c347" id="r_a060b68e8f70d500b252cc1141032c347"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a060b68e8f70d500b252cc1141032c347">rectangles_push</a> (<a class="el" href="struct_rectangles.html">Rectangles</a> *rects, <a class="el" href="struct_rectangle.html">Rectangle</a> rect)</td></tr>
+<tr class="memdesc:a060b68e8f70d500b252cc1141032c347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un rectangle à la pile.  <br /></td></tr>
+<tr class="memitem:a9bd44c2754e57f3de2047fe50d4b7fe3" id="r_a9bd44c2754e57f3de2047fe50d4b7fe3"><td class="memItemLeft">const <a class="el" href="struct_rectangle.html">Rectangle</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a9bd44c2754e57f3de2047fe50d4b7fe3">rectangles_top</a> (const <a class="el" href="struct_rectangles.html">Rectangles</a> *rects)</td></tr>
+<tr class="memdesc:a9bd44c2754e57f3de2047fe50d4b7fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient le rectangle supérieur (le plus récemment ajouté).  <br /></td></tr>
+<tr class="memitem:ac006b4ac53d15c4c0442547876f5b6ed" id="r_ac006b4ac53d15c4c0442547876f5b6ed"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac006b4ac53d15c4c0442547876f5b6ed">rectangle_intersection</a> (const <a class="el" href="struct_rectangle.html">Rectangle</a> *a, const <a class="el" href="struct_rectangle.html">Rectangle</a> *b, <a class="el" href="struct_rectangle.html">Rectangle</a> *out)</td></tr>
+<tr class="memdesc:ac006b4ac53d15c4c0442547876f5b6ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule l'intersection de deux rectangles.  <br /></td></tr>
+<tr class="memitem:abf33b831870774ad67334c06c64b2af0" id="r_abf33b831870774ad67334c06c64b2af0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#abf33b831870774ad67334c06c64b2af0">rectangles_top_intersection</a> (const <a class="el" href="struct_rectangles.html">Rectangles</a> *rects, const <a class="el" href="struct_rectangle.html">Rectangle</a> *other, <a class="el" href="struct_rectangle.html">Rectangle</a> *out)</td></tr>
+<tr class="memdesc:abf33b831870774ad67334c06c64b2af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule l'intersection du rectangle supérieur avec un autre rectangle.  <br /></td></tr>
+<tr class="memitem:a2c1a7c10131d0b1ac05a15424a190936" id="r_a2c1a7c10131d0b1ac05a15424a190936"><td class="memItemLeft"><a class="el" href="#a8725f4b1f6bb4ae6a2b38d6273bb61af">RectAddResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2c1a7c10131d0b1ac05a15424a190936">rectangles_push_if_intersect</a> (<a class="el" href="struct_rectangles.html">Rectangles</a> *rects, const <a class="el" href="struct_rectangle.html">Rectangle</a> *rect)</td></tr>
+<tr class="memdesc:a2c1a7c10131d0b1ac05a15424a190936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un rectangle à la pile s'il croise avec le rectangle supérieur.  <br /></td></tr>
+<tr class="memitem:aafe120a02824de4f81453d1332ab2d70" id="r_aafe120a02824de4f81453d1332ab2d70"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aafe120a02824de4f81453d1332ab2d70">rectangles_draw_all</a> (const <a class="el" href="struct_rectangles.html">Rectangles</a> *rects)</td></tr>
+<tr class="memdesc:aafe120a02824de4f81453d1332ab2d70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine tous les rectangles de la pile sur l'affichage.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Interface de gestion des rectangles et de la pile. </p>
+<p>Fournit les structures de données et les fonctions pour gérer une pile dynamique de rectangles utilisés dans le jeu Stack, y compris la détection de collision et le rendu. </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentation du type de l'énumération</h2>
+<a id="a8725f4b1f6bb4ae6a2b38d6273bb61af" name="a8725f4b1f6bb4ae6a2b38d6273bb61af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8725f4b1f6bb4ae6a2b38d6273bb61af">&#9670;&#160;</a></span>RectAddResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a8725f4b1f6bb4ae6a2b38d6273bb61af">RectAddResult</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codes de résultat pour les opérations d'ajout de rectangles. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a8725f4b1f6bb4ae6a2b38d6273bb61afa71ccfcbdaafa354ae370ad570cd4088a" name="a8725f4b1f6bb4ae6a2b38d6273bb61afa71ccfcbdaafa354ae370ad570cd4088a"></a>RECT_ADD_NONE&#160;</td><td class="fielddoc"><p>Pas d'intersection, rectangle non ajouté. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8725f4b1f6bb4ae6a2b38d6273bb61afa8801d0c367fdacf41bcb6c29272190fb" name="a8725f4b1f6bb4ae6a2b38d6273bb61afa8801d0c367fdacf41bcb6c29272190fb"></a>RECT_ADD_SUCCESS&#160;</td><td class="fielddoc"><p><a class="el" href="struct_rectangle.html" title="Représente un seul rectangle avec une étendue verticale.">Rectangle</a> ajouté avec succès. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8725f4b1f6bb4ae6a2b38d6273bb61afa7ca5c0c8715971fb56170d44007a5341" name="a8725f4b1f6bb4ae6a2b38d6273bb61afa7ca5c0c8715971fb56170d44007a5341"></a>RECT_ADD_ERROR&#160;</td><td class="fielddoc"><p>Erreur lors de l'ajout du rectangle. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="ac006b4ac53d15c4c0442547876f5b6ed" name="ac006b4ac53d15c4c0442547876f5b6ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac006b4ac53d15c4c0442547876f5b6ed">&#9670;&#160;</a></span>rectangle_intersection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rectangle_intersection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_rectangle.html">Rectangle</a> *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_rectangle.html">Rectangle</a> *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle.html">Rectangle</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcule l'intersection de deux rectangles. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>- Premier rectangle. </td></tr>
+    <tr><td class="paramname">b</td><td>- Deuxième rectangle. </td></tr>
+    <tr><td class="paramname">out</td><td>- <a class="el" href="struct_rectangle.html" title="Représente un seul rectangle avec une étendue verticale.">Rectangle</a> de sortie contenant l'intersection. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool - Vrai si les rectangles se croisent, faux sinon.</dd></dl>
+<p>Le rectangle de sortie représente la région qui se chevauche. Une intersection valide nécessite y_0 &lt; y_1. </p>
+
+</div>
+</div>
+<a id="aafe120a02824de4f81453d1332ab2d70" name="aafe120a02824de4f81453d1332ab2d70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafe120a02824de4f81453d1332ab2d70">&#9670;&#160;</a></span>rectangles_draw_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rectangles_draw_all </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_rectangles.html">Rectangles</a> *</td>          <td class="paramname"><span class="paramname"><em>rects</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine tous les rectangles de la pile sur l'affichage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rects</td><td>- Pointeur sur la structure <a class="el" href="struct_rectangles.html" title="File circulaire de rectangles (pile de pièces capturées).">Rectangles</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void</dd></dl>
+<p>Affiche chaque rectangle à sa position horizontale correspondante, créant la pile visuelle des pièces capturées. </p>
+
+</div>
+</div>
+<a id="a90721d6f3a6848c50b8d4ec83cf54765" name="a90721d6f3a6848c50b8d4ec83cf54765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90721d6f3a6848c50b8d4ec83cf54765">&#9670;&#160;</a></span>rectangles_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rectangles_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangles.html">Rectangles</a> *</td>          <td class="paramname"><span class="paramname"><em>rects</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libère toutes les ressources allouées à la pile de rectangles. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rects</td><td>- Pointeur sur la structure <a class="el" href="struct_rectangles.html" title="File circulaire de rectangles (pile de pièces capturées).">Rectangles</a> à libérer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Après l'appel de cette fonction, la structure de rectangles n'est plus valide jusqu'à la réinitialisation. </dd></dl>
+
+</div>
+</div>
+<a id="ae248690461be5d02e47d1bbb37a330de" name="ae248690461be5d02e47d1bbb37a330de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae248690461be5d02e47d1bbb37a330de">&#9670;&#160;</a></span>rectangles_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rectangles_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangles.html">Rectangles</a> *</td>          <td class="paramname"><span class="paramname"><em>rects</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise la pile de rectangles. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rects</td><td>- Pointeur sur la structure <a class="el" href="struct_rectangles.html" title="File circulaire de rectangles (pile de pièces capturées).">Rectangles</a> à initialiser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool - Vrai si l'initialisation a réussi, faux sinon.</dd></dl>
+<p>Alloue de la mémoire pour la pile de rectangles et crée l'ensemble par défaut des rectangles initiaux. </p><dl class="section note"><dt>Note</dt><dd>Doit être appelée avant toute autre fonction de rectangles. </dd></dl>
+
+</div>
+</div>
+<a id="a060b68e8f70d500b252cc1141032c347" name="a060b68e8f70d500b252cc1141032c347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a060b68e8f70d500b252cc1141032c347">&#9670;&#160;</a></span>rectangles_push()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rectangles_push </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangles.html">Rectangles</a> *</td>          <td class="paramname"><span class="paramname"><em>rects</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle.html">Rectangle</a></td>          <td class="paramname"><span class="paramname"><em>rect</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un rectangle à la pile. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rects</td><td>- Pointeur sur la structure <a class="el" href="struct_rectangles.html" title="File circulaire de rectangles (pile de pièces capturées).">Rectangles</a>. </td></tr>
+    <tr><td class="paramname">rect</td><td>- Le rectangle à ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool - Vrai si le rectangle a été ajouté, faux en cas d'erreur.</dd></dl>
+<p>Gère la sémantique du tampon circulaire. Quand la pile est pleine, les anciens rectangles sont écrasés. </p>
+
+</div>
+</div>
+<a id="a2c1a7c10131d0b1ac05a15424a190936" name="a2c1a7c10131d0b1ac05a15424a190936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1a7c10131d0b1ac05a15424a190936">&#9670;&#160;</a></span>rectangles_push_if_intersect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8725f4b1f6bb4ae6a2b38d6273bb61af">RectAddResult</a> rectangles_push_if_intersect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangles.html">Rectangles</a> *</td>          <td class="paramname"><span class="paramname"><em>rects</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_rectangle.html">Rectangle</a> *</td>          <td class="paramname"><span class="paramname"><em>rect</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un rectangle à la pile s'il croise avec le rectangle supérieur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rects</td><td>- Pointeur sur la structure <a class="el" href="struct_rectangles.html" title="File circulaire de rectangles (pile de pièces capturées).">Rectangles</a>. </td></tr>
+    <tr><td class="paramname">rect</td><td>- Le rectangle à tester et potentiellement ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="#a8725f4b1f6bb4ae6a2b38d6273bb61af" title="Codes de résultat pour les opérations d&#39;ajout de rectangles.">RectAddResult</a> - Indique le succès, pas d'intersection ou erreur.</dd></dl>
+<p>Si le rectangle croise avec le sommet de la pile, l'intersection est ajoutée comme un nouveau rectangle et peut être capturée à l'itération suivante. </p><dl class="section note"><dt>Note</dt><dd>C'est la fonction principale de logique de jeu pour déterminer les captures réussies. </dd></dl>
+
+</div>
+</div>
+<a id="a76b5911ef18623f17ea82d7767bc308f" name="a76b5911ef18623f17ea82d7767bc308f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76b5911ef18623f17ea82d7767bc308f">&#9670;&#160;</a></span>rectangles_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rectangles_reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangles.html">Rectangles</a> *</td>          <td class="paramname"><span class="paramname"><em>rects</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Réinitialise la pile de rectangles à son état initial. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rects</td><td>- Pointeur sur la structure <a class="el" href="struct_rectangles.html" title="File circulaire de rectangles (pile de pièces capturées).">Rectangles</a> à réinitialiser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void</dd></dl>
+<p>Efface la pile et recrée l'ensemble par défaut des rectangles initiaux. N'utilise pas la mémoire allouée. </p>
+
+</div>
+</div>
+<a id="a9bd44c2754e57f3de2047fe50d4b7fe3" name="a9bd44c2754e57f3de2047fe50d4b7fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd44c2754e57f3de2047fe50d4b7fe3">&#9670;&#160;</a></span>rectangles_top()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_rectangle.html">Rectangle</a> * rectangles_top </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_rectangles.html">Rectangles</a> *</td>          <td class="paramname"><span class="paramname"><em>rects</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtient le rectangle supérieur (le plus récemment ajouté). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rects</td><td>- Pointeur sur la structure <a class="el" href="struct_rectangles.html" title="File circulaire de rectangles (pile de pièces capturées).">Rectangles</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>const Rectangle* - Pointeur sur le rectangle supérieur, ou NULL si la pile est vide. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Le pointeur retourné pointe vers des données internes et ne doit pas être modifié. </dd></dl>
+
+</div>
+</div>
+<a id="abf33b831870774ad67334c06c64b2af0" name="abf33b831870774ad67334c06c64b2af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf33b831870774ad67334c06c64b2af0">&#9670;&#160;</a></span>rectangles_top_intersection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rectangles_top_intersection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_rectangles.html">Rectangles</a> *</td>          <td class="paramname"><span class="paramname"><em>rects</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_rectangle.html">Rectangle</a> *</td>          <td class="paramname"><span class="paramname"><em>other</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle.html">Rectangle</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcule l'intersection du rectangle supérieur avec un autre rectangle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rects</td><td>- Pointeur sur la structure <a class="el" href="struct_rectangles.html" title="File circulaire de rectangles (pile de pièces capturées).">Rectangles</a>. </td></tr>
+    <tr><td class="paramname">other</td><td>- L'autre rectangle à croiser. </td></tr>
+    <tr><td class="paramname">out</td><td>- <a class="el" href="struct_rectangle.html" title="Représente un seul rectangle avec une étendue verticale.">Rectangle</a> de sortie contenant l'intersection. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool - Vrai si l'intersection existe, faux sinon. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Un wrapper pratique autour de <a class="el" href="#ac006b4ac53d15c4c0442547876f5b6ed" title="Calcule l&#39;intersection de deux rectangles.">rectangle_intersection()</a>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>app</b></li><li class="navelem"><a href="rectangle_8h.html">rectangle.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

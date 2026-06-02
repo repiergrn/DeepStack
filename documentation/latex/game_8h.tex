@@ -1,0 +1,259 @@
+\doxysection{Référence du fichier app/\+game.h}
+\hypertarget{game_8h}{}\label{game_8h}\index{app/game.h@{app/game.h}}
+
+
+Interface de logique de jeu.  
+
+
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include "{}rectangle.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_game}{Game}}
+\begin{DoxyCompactList}\small\item\em Représente l\textquotesingle{}état complet du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \{ \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a98d2a2153b4ae0445fa0b114d65b94d9}{STATE\+\_\+\+INIT}}
+, \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a8211ee7ceda72b3c0e9b4a547acb471b}{STATE\+\_\+\+MENU}}
+, \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285add58fbaa83b0bc3973bc4adad84a5d88}{STATE\+\_\+\+GAME}}
+, \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a87b485aa4d1bf0a72455acb39393cd65}{STATE\+\_\+\+SCORE}}
+ \}
+\begin{DoxyCompactList}\small\item\em États de la machine à états de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+enum \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}} \{ \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11aa95f48065472a7866854a3c9b9ea8347e}{DIFFICULTY\+\_\+\+EASY}}
+, \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11aacd9bd660438188b3fcbed6efc3deb92d}{DIFFICULTY\+\_\+\+MEDIUM}}
+, \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11aa0d7385205eaa38cd67abe052bc39e431}{DIFFICULTY\+\_\+\+HARD}}
+ \}
+\begin{DoxyCompactList}\small\item\em Niveaux de difficulté du jeu affectant la vitesse de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{game_8h_a1fc72b1cefe1d6423da725295077a073}{game\+\_\+init}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game)
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}état du jeu. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{game_8h_afdc20b2499a550936dc01e125b493285}{game\+\_\+free}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game)
+\begin{DoxyCompactList}\small\item\em Libère toutes les ressources allouées au jeu. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{game_8h_a8e246714cfe5d69632e88a9acb5954f9}{game\+\_\+reset}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game)
+\begin{DoxyCompactList}\small\item\em Réinitialise le jeu à son état initial. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{game_8h_ab2411c4f679be75f1fdf346c664c7421}{game\+\_\+play}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game, \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}} difficulty)
+\begin{DoxyCompactList}\small\item\em Exécute la boucle de jeu principale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Interface de logique de jeu. 
+
+Définit les structures et les fonctions pour gérer l\textquotesingle{}état du jeu Stack, y compris l\textquotesingle{}initialisation du jeu, la réinitialisation et la boucle de jeu principale. 
+
+\label{game_8h_doc-enum-members}
+\Hypertarget{game_8h_doc-enum-members}
+\doxysubsection{Documentation du type de l\textquotesingle{}énumération}
+\Hypertarget{game_8h_a022afd659100232d71e5cf905098a11a}\index{game.h@{game.h}!GameDifficulty@{GameDifficulty}}
+\index{GameDifficulty@{GameDifficulty}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GameDifficulty}{GameDifficulty}}
+{\footnotesize\ttfamily \label{game_8h_a022afd659100232d71e5cf905098a11a} 
+enum \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}}}
+
+
+
+Niveaux de difficulté du jeu affectant la vitesse de jeu. 
+
+\begin{DoxyEnumFields}[2]{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIFFICULTY\_EASY@{DIFFICULTY\_EASY}!game.h@{game.h}}
+\index{game.h@{game.h}!DIFFICULTY\_EASY@{DIFFICULTY\_EASY}}
+}\Hypertarget{game_8h_a022afd659100232d71e5cf905098a11aa95f48065472a7866854a3c9b9ea8347e}\label{game_8h_a022afd659100232d71e5cf905098a11aa95f48065472a7866854a3c9b9ea8347e} 
+DIFFICULTY\+\_\+\+EASY&Difficulté facile -\/ jeu plus lent. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIFFICULTY\_MEDIUM@{DIFFICULTY\_MEDIUM}!game.h@{game.h}}
+\index{game.h@{game.h}!DIFFICULTY\_MEDIUM@{DIFFICULTY\_MEDIUM}}
+}\Hypertarget{game_8h_a022afd659100232d71e5cf905098a11aacd9bd660438188b3fcbed6efc3deb92d}\label{game_8h_a022afd659100232d71e5cf905098a11aacd9bd660438188b3fcbed6efc3deb92d} 
+DIFFICULTY\+\_\+\+MEDIUM&Difficulté moyenne -\/ vitesse modérée. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIFFICULTY\_HARD@{DIFFICULTY\_HARD}!game.h@{game.h}}
+\index{game.h@{game.h}!DIFFICULTY\_HARD@{DIFFICULTY\_HARD}}
+}\Hypertarget{game_8h_a022afd659100232d71e5cf905098a11aa0d7385205eaa38cd67abe052bc39e431}\label{game_8h_a022afd659100232d71e5cf905098a11aa0d7385205eaa38cd67abe052bc39e431} 
+DIFFICULTY\+\_\+\+HARD&Difficulté difficile -\/ jeu plus rapide. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}\index{game.h@{game.h}!GameState@{GameState}}
+\index{GameState@{GameState}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GameState}{GameState}}
+{\footnotesize\ttfamily \label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285} 
+enum \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}}}
+
+
+
+États de la machine à états de l\textquotesingle{}application. 
+
+\begin{DoxyEnumFields}[2]{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_INIT@{STATE\_INIT}!game.h@{game.h}}
+\index{game.h@{game.h}!STATE\_INIT@{STATE\_INIT}}
+}\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a98d2a2153b4ae0445fa0b114d65b94d9}\label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a98d2a2153b4ae0445fa0b114d65b94d9} 
+STATE\+\_\+\+INIT&État d\textquotesingle{}initialisation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_MENU@{STATE\_MENU}!game.h@{game.h}}
+\index{game.h@{game.h}!STATE\_MENU@{STATE\_MENU}}
+}\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a8211ee7ceda72b3c0e9b4a547acb471b}\label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a8211ee7ceda72b3c0e9b4a547acb471b} 
+STATE\+\_\+\+MENU&État d\textquotesingle{}affichage du menu et de sélection de difficulté. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_GAME@{STATE\_GAME}!game.h@{game.h}}
+\index{game.h@{game.h}!STATE\_GAME@{STATE\_GAME}}
+}\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285add58fbaa83b0bc3973bc4adad84a5d88}\label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285add58fbaa83b0bc3973bc4adad84a5d88} 
+STATE\+\_\+\+GAME&État de jeu actif. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_SCORE@{STATE\_SCORE}!game.h@{game.h}}
+\index{game.h@{game.h}!STATE\_SCORE@{STATE\_SCORE}}
+}\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a87b485aa4d1bf0a72455acb39393cd65}\label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a87b485aa4d1bf0a72455acb39393cd65} 
+STATE\+\_\+\+SCORE&État d\textquotesingle{}affichage du score. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{game_8h_doc-func-members}
+\Hypertarget{game_8h_doc-func-members}
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{game_8h_afdc20b2499a550936dc01e125b493285}\index{game.h@{game.h}!game\_free@{game\_free}}
+\index{game\_free@{game\_free}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{game\_free()}{game\_free()}}
+{\footnotesize\ttfamily \label{game_8h_afdc20b2499a550936dc01e125b493285} 
+void game\+\_\+free (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{}\end{DoxyParamCaption})}
+
+
+
+Libère toutes les ressources allouées au jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à libérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Après l\textquotesingle{}appel de cette fonction, la structure de jeu n\textquotesingle{}est plus valide tant qu\textquotesingle{}elle n\textquotesingle{}est pas réinitialisée.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à libérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Après l\textquotesingle{}appel de cette fonction, la structure de jeu n\textquotesingle{}est plus valide jusqu\textquotesingle{}à la réinitialisation. 
+\end{DoxyNote}
+\Hypertarget{game_8h_a1fc72b1cefe1d6423da725295077a073}\index{game.h@{game.h}!game\_init@{game\_init}}
+\index{game\_init@{game\_init}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{game\_init()}{game\_init()}}
+{\footnotesize\ttfamily \label{game_8h_a1fc72b1cefe1d6423da725295077a073} 
+bool game\+\_\+init (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{}\end{DoxyParamCaption})}
+
+
+
+Initialise l\textquotesingle{}état du jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à initialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool -\/ Vrai si l\textquotesingle{}initialisation a réussi, faux sinon. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Doit être appelée avant toute autre fonction de jeu. Définit les valeurs initiales pour la position, la taille et crée la pile de rectangles.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à initialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool -\/ Vrai si l\textquotesingle{}initialisation a réussi, faux sinon. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Configure la position initiale du rectangle, la taille et crée la pile de rectangles. 
+\end{DoxyNote}
+\Hypertarget{game_8h_ab2411c4f679be75f1fdf346c664c7421}\index{game.h@{game.h}!game\_play@{game\_play}}
+\index{game\_play@{game\_play}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{game\_play()}{game\_play()}}
+{\footnotesize\ttfamily \label{game_8h_ab2411c4f679be75f1fdf346c664c7421} 
+void game\+\_\+play (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{, }\item[{\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}}}]{difficulty}{}\end{DoxyParamCaption})}
+
+
+
+Exécute la boucle de jeu principale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game}. \\
+\hline
+{\em difficulty} & -\/ Le niveau de difficulté sélectionné. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction exécute le jeu jusqu\textquotesingle{}à ce que le joueur échoue à capturer le rectangle. Gère l\textquotesingle{}entrée tactile, le mouvement du rectangle, le rendu et la détection de collision. La difficulté affecte la vitesse du mouvement du rectangle.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game}. \\
+\hline
+{\em difficulty} & -\/ Le niveau de difficulté sélectionné. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void
+\end{DoxyReturn}
+Contrôle la boucle de jeu incluant :\+
+\begin{DoxyItemize}
+\item Affichage des rectangles empilés
+\item Mise à jour du mouvement du rectangle
+\item Traitement de l\textquotesingle{}entrée tactile
+\item Fréquence d\textquotesingle{}images adaptive selon la difficulté et le score \begin{DoxyNote}{Note}
+La fréquence d\textquotesingle{}images diminue à mesure que le score augmente, rendant le jeu plus difficile. La boucle continue jusqu\textquotesingle{}à ce que le joueur échoue à capturer le rectangle. 
+\end{DoxyNote}
+
+\end{DoxyItemize}\Hypertarget{game_8h_a8e246714cfe5d69632e88a9acb5954f9}\index{game.h@{game.h}!game\_reset@{game\_reset}}
+\index{game\_reset@{game\_reset}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{game\_reset()}{game\_reset()}}
+{\footnotesize\ttfamily \label{game_8h_a8e246714cfe5d69632e88a9acb5954f9} 
+void game\+\_\+reset (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{}\end{DoxyParamCaption})}
+
+
+
+Réinitialise le jeu à son état initial. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à réinitialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Efface le score, réinitialise la position et la taille du rectangle en mouvement, et réinitialise la pile de rectangles. N\textquotesingle{}utilise pas la mémoire allouée ; utilisez \doxylink{game_8c_afdc20b2499a550936dc01e125b493285}{game\+\_\+free()} pour cela.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à réinitialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Efface le score, réinitialise la position et la taille du rectangle en mouvement, et réinitialise la pile de rectangles. 
+\end{DoxyNote}

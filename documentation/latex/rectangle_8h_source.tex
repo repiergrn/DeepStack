@@ -1,0 +1,70 @@
+\doxysection{rectangle.\+h}
+\hypertarget{rectangle_8h_source}{}\label{rectangle_8h_source}\index{app/rectangle.h@{app/rectangle.h}}
+\doxymbox{\hyperlink{rectangle_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ RECTANGLE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ RECTANGLE\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}tft\_ili9341/stm32g4\_ili9341.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ RECTANGLES\_DEFAULT\_CAPACITY\ 18}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ RECTANGLE\_DEFAULT\_Y0\ 70}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ RECTANGLE\_DEFAULT\_SIZE\ 100}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ RECTANGLE\_DEFAULT\_COLOR\ ILI9341\_COLOR\_BLACK}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ RECTANGLE\_DEFAULT\_HEIGHT\ 10}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ RECTANGLES\_DEFAULT\_COUNT\ 4}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ RECTANGLES\_TOTAL\_HEIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ (RECTANGLE\_DEFAULT\_HEIGHT\ *\ RECTANGLES\_DEFAULT\_CAPACITY)}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00045\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_rectangle_aab3b42a69390f6cf1ae80ce223bf5fb0}{y\_0}};}
+\DoxyCodeLine{00047\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_rectangle_a884503307ffeb2281142508aea758190}{y\_1}};}
+\DoxyCodeLine{00048\ \}\ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00058\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_rectangles_adf88ab2173d0b0c842a920d8bc083940}{capacity}};}
+\DoxyCodeLine{00060\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_rectangles_a212a3aa83d92ba49e517778e83ca3b9f}{size}};}
+\DoxyCodeLine{00063\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_rectangles_a7c6df66e847ed6ff008ecff5438f131d}{begin}};}
+\DoxyCodeLine{00065\ \ \ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ *\doxymbox{\hyperlink{struct_rectangles_a8934a29bc3fbf357ff4ae9ba9508cfa8}{data}};}
+\DoxyCodeLine{00066\ \}\ \doxymbox{\hyperlink{struct_rectangles}{Rectangles}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00074\ \ \ \doxymbox{\hyperlink{rectangle_8h_a8725f4b1f6bb4ae6a2b38d6273bb61afa71ccfcbdaafa354ae370ad570cd4088a}{RECT\_ADD\_NONE}},}
+\DoxyCodeLine{00076\ \ \ \doxymbox{\hyperlink{rectangle_8h_a8725f4b1f6bb4ae6a2b38d6273bb61afa8801d0c367fdacf41bcb6c29272190fb}{RECT\_ADD\_SUCCESS}},}
+\DoxyCodeLine{00078\ \ \ \doxymbox{\hyperlink{rectangle_8h_a8725f4b1f6bb4ae6a2b38d6273bb61afa7ca5c0c8715971fb56170d44007a5341}{RECT\_ADD\_ERROR}}}
+\DoxyCodeLine{00079\ \}\ \doxymbox{\hyperlink{rectangle_8h_a8725f4b1f6bb4ae6a2b38d6273bb61af}{RectAddResult}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{rectangle_8h_ae248690461be5d02e47d1bbb37a330de}{rectangles\_init}}(\doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ *rects);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{rectangle_8h_a90721d6f3a6848c50b8d4ec83cf54765}{rectangles\_free}}(\doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ *rects);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{rectangle_8h_a76b5911ef18623f17ea82d7767bc308f}{rectangles\_reset}}(\doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ *rects);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{rectangle_8h_a060b68e8f70d500b252cc1141032c347}{rectangles\_push}}(\doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ *rects,\ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ rect);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ *\doxymbox{\hyperlink{rectangle_8h_a9bd44c2754e57f3de2047fe50d4b7fe3}{rectangles\_top}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ *rects);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{rectangle_8h_ac006b4ac53d15c4c0442547876f5b6ed}{rectangle\_intersection}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ *a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ *b,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ *out);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00150\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{rectangle_8h_abf33b831870774ad67334c06c64b2af0}{rectangles\_top\_intersection}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ *rects,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ *other,\ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ *out);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00165\ \doxymbox{\hyperlink{rectangle_8h_a8725f4b1f6bb4ae6a2b38d6273bb61af}{RectAddResult}}\ \doxymbox{\hyperlink{rectangle_8h_a2c1a7c10131d0b1ac05a15424a190936}{rectangles\_push\_if\_intersect}}(\doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ *rects,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_rectangle}{Rectangle}}\ *rect);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00175\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{rectangle_8h_aafe120a02824de4f81453d1332ab2d70}{rectangles\_draw\_all}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ *rects);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

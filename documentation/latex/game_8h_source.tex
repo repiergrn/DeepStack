@@ -1,0 +1,52 @@
+\doxysection{game.\+h}
+\hypertarget{game_8h_source}{}\label{game_8h_source}\index{app/game.h@{app/game.h}}
+\doxymbox{\hyperlink{game_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ GAME\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ GAME\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{rectangle_8h}{rectangle.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00023\ \ \ \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a98d2a2153b4ae0445fa0b114d65b94d9}{STATE\_INIT}},}
+\DoxyCodeLine{00025\ \ \ \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a8211ee7ceda72b3c0e9b4a547acb471b}{STATE\_MENU}},}
+\DoxyCodeLine{00027\ \ \ \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285add58fbaa83b0bc3973bc4adad84a5d88}{STATE\_GAME}},}
+\DoxyCodeLine{00029\ \ \ \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a87b485aa4d1bf0a72455acb39393cd65}{STATE\_SCORE}}}
+\DoxyCodeLine{00030\ \}\ \doxymbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00038\ \ \ \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11aa95f48065472a7866854a3c9b9ea8347e}{DIFFICULTY\_EASY}},}
+\DoxyCodeLine{00040\ \ \ \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11aacd9bd660438188b3fcbed6efc3deb92d}{DIFFICULTY\_MEDIUM}},}
+\DoxyCodeLine{00042\ \ \ \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11aa0d7385205eaa38cd67abe052bc39e431}{DIFFICULTY\_HARD}}}
+\DoxyCodeLine{00043\ \}\ \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{GameDifficulty}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00054\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_game_ad7bbb9fb6717e7ef4b8d956d02d9e362}{rect\_y}};}
+\DoxyCodeLine{00056\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_game_a36e3daded9a7ecd6825273c8d3b69ad4}{rect\_x}};}
+\DoxyCodeLine{00058\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_game_a70d42f0a963b9e2627c6f36419340858}{rect\_length}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_game_acb786feb815b445f696b502846320e18}{height}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ uint16\_t\ \doxymbox{\hyperlink{struct_game_a10be199b2b0a3c50d1b70145417f592c}{score}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_game_a17daa2c253decd43501e26a1538b75c0}{toright}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \doxymbox{\hyperlink{struct_rectangles}{Rectangles}}\ \doxymbox{\hyperlink{struct_game_ad89e3ea29426ad4b1e762db13b36f27a}{rects}};}
+\DoxyCodeLine{00072\ \}\ \doxymbox{\hyperlink{struct_game}{Game}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{game_8h_a1fc72b1cefe1d6423da725295077a073}{game\_init}}(\doxymbox{\hyperlink{struct_game}{Game}}\ *game);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{game_8h_afdc20b2499a550936dc01e125b493285}{game\_free}}(\doxymbox{\hyperlink{struct_game}{Game}}\ *game);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{game_8h_a8e246714cfe5d69632e88a9acb5954f9}{game\_reset}}(\doxymbox{\hyperlink{struct_game}{Game}}\ *game);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{game_8h_ab2411c4f679be75f1fdf346c664c7421}{game\_play}}(\doxymbox{\hyperlink{struct_game}{Game}}\ *game,\ \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{GameDifficulty}}\ difficulty);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ GAME\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,230 @@
+\doxysection{Référence du fichier app/\+rectangle.c}
+\hypertarget{rectangle_8c}{}\label{rectangle_8c}\index{app/rectangle.c@{app/rectangle.c}}
+
+
+Implémentation de la gestion des rectangles et de la pile.  
+
+
+{\ttfamily \+\#include "{}rectangle.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{rectangle_8c_ae248690461be5d02e47d1bbb37a330de}{rectangles\+\_\+init}} (\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}rects)
+\begin{DoxyCompactList}\small\item\em Initialise la pile de rectangles. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{rectangle_8c_a90721d6f3a6848c50b8d4ec83cf54765}{rectangles\+\_\+free}} (\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}rects)
+\begin{DoxyCompactList}\small\item\em Libère toutes les ressources allouées à la pile de rectangles. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{rectangle_8c_a76b5911ef18623f17ea82d7767bc308f}{rectangles\+\_\+reset}} (\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}rects)
+\begin{DoxyCompactList}\small\item\em Réinitialise la pile de rectangles à son état initial. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{rectangle_8c_a060b68e8f70d500b252cc1141032c347}{rectangles\+\_\+push}} (\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}rects, \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} rect)
+\begin{DoxyCompactList}\small\item\em Ajoute un rectangle à la pile. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{rectangle_8c_a9bd44c2754e57f3de2047fe50d4b7fe3}{rectangles\+\_\+top}} (const \doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}rects)
+\begin{DoxyCompactList}\small\item\em Obtient le rectangle supérieur (le plus récemment ajouté). \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{rectangle_8c_ac006b4ac53d15c4c0442547876f5b6ed}{rectangle\+\_\+intersection}} (const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}a, const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}b, \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Calcule l\textquotesingle{}intersection de deux rectangles. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{rectangle_8c_abf33b831870774ad67334c06c64b2af0}{rectangles\+\_\+top\+\_\+intersection}} (const \doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}rects, const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}other, \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Calcule l\textquotesingle{}intersection du rectangle supérieur avec un autre rectangle. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{rectangle_8h_a8725f4b1f6bb4ae6a2b38d6273bb61af}{Rect\+Add\+Result}} \doxymbox{\hyperlink{rectangle_8c_a2c1a7c10131d0b1ac05a15424a190936}{rectangles\+\_\+push\+\_\+if\+\_\+intersect}} (\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}rects, const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}rect)
+\begin{DoxyCompactList}\small\item\em Ajoute un rectangle à la pile s\textquotesingle{}il croise avec le rectangle supérieur. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{rectangle_8c_aafe120a02824de4f81453d1332ab2d70}{rectangles\+\_\+draw\+\_\+all}} (const \doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}rects)
+\begin{DoxyCompactList}\small\item\em Dessine tous les rectangles de la pile sur l\textquotesingle{}affichage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Implémentation de la gestion des rectangles et de la pile. 
+
+Implémente la gestion dynamique de la pile pour les rectangles en utilisant une sémantique de tampon circulaire, la détection de collision et le rendu. 
+
+\label{rectangle_8c_doc-func-members}
+\Hypertarget{rectangle_8c_doc-func-members}
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{rectangle_8c_ac006b4ac53d15c4c0442547876f5b6ed}\index{rectangle.c@{rectangle.c}!rectangle\_intersection@{rectangle\_intersection}}
+\index{rectangle\_intersection@{rectangle\_intersection}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangle\_intersection()}{rectangle\_intersection()}}
+{\footnotesize\ttfamily \label{rectangle_8c_ac006b4ac53d15c4c0442547876f5b6ed} 
+bool rectangle\+\_\+intersection (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}}]{b}{, }\item[{\doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}}]{out}{}\end{DoxyParamCaption})}
+
+
+
+Calcule l\textquotesingle{}intersection de deux rectangles. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & -\/ Premier rectangle. \\
+\hline
+{\em b} & -\/ Deuxième rectangle. \\
+\hline
+{\em out} & -\/ \doxylink{struct_rectangle}{Rectangle} de sortie contenant l\textquotesingle{}intersection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool -\/ Vrai si les rectangles se croisent, faux sinon.
+\end{DoxyReturn}
+Le rectangle de sortie représente la région qui se chevauche. Une intersection valide nécessite y\+\_\+0 \texorpdfstring{$<$}{<} y\+\_\+1. \Hypertarget{rectangle_8c_aafe120a02824de4f81453d1332ab2d70}\index{rectangle.c@{rectangle.c}!rectangles\_draw\_all@{rectangles\_draw\_all}}
+\index{rectangles\_draw\_all@{rectangles\_draw\_all}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangles\_draw\_all()}{rectangles\_draw\_all()}}
+{\footnotesize\ttfamily \label{rectangle_8c_aafe120a02824de4f81453d1332ab2d70} 
+void rectangles\+\_\+draw\+\_\+all (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}}]{rects}{}\end{DoxyParamCaption})}
+
+
+
+Dessine tous les rectangles de la pile sur l\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rects} & -\/ Pointeur sur la structure \doxylink{struct_rectangles}{Rectangles}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void
+\end{DoxyReturn}
+Affiche chaque rectangle à sa position horizontale correspondante, créant la pile visuelle des pièces capturées. \Hypertarget{rectangle_8c_a90721d6f3a6848c50b8d4ec83cf54765}\index{rectangle.c@{rectangle.c}!rectangles\_free@{rectangles\_free}}
+\index{rectangles\_free@{rectangles\_free}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangles\_free()}{rectangles\_free()}}
+{\footnotesize\ttfamily \label{rectangle_8c_a90721d6f3a6848c50b8d4ec83cf54765} 
+void rectangles\+\_\+free (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}}]{rects}{}\end{DoxyParamCaption})}
+
+
+
+Libère toutes les ressources allouées à la pile de rectangles. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rects} & -\/ Pointeur sur la structure \doxylink{struct_rectangles}{Rectangles} à libérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Après l\textquotesingle{}appel de cette fonction, la structure de rectangles n\textquotesingle{}est plus valide jusqu\textquotesingle{}à la réinitialisation. 
+\end{DoxyNote}
+\Hypertarget{rectangle_8c_ae248690461be5d02e47d1bbb37a330de}\index{rectangle.c@{rectangle.c}!rectangles\_init@{rectangles\_init}}
+\index{rectangles\_init@{rectangles\_init}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangles\_init()}{rectangles\_init()}}
+{\footnotesize\ttfamily \label{rectangle_8c_ae248690461be5d02e47d1bbb37a330de} 
+bool rectangles\+\_\+init (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}}]{rects}{}\end{DoxyParamCaption})}
+
+
+
+Initialise la pile de rectangles. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rects} & -\/ Pointeur sur la structure \doxylink{struct_rectangles}{Rectangles} à initialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool -\/ Vrai si l\textquotesingle{}initialisation a réussi, faux sinon.
+\end{DoxyReturn}
+Alloue de la mémoire pour la pile de rectangles et crée l\textquotesingle{}ensemble par défaut des rectangles initiaux. \begin{DoxyNote}{Note}
+Doit être appelée avant toute autre fonction de rectangles. 
+\end{DoxyNote}
+\Hypertarget{rectangle_8c_a060b68e8f70d500b252cc1141032c347}\index{rectangle.c@{rectangle.c}!rectangles\_push@{rectangles\_push}}
+\index{rectangles\_push@{rectangles\_push}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangles\_push()}{rectangles\_push()}}
+{\footnotesize\ttfamily \label{rectangle_8c_a060b68e8f70d500b252cc1141032c347} 
+bool rectangles\+\_\+push (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}}]{rects}{, }\item[{\doxymbox{\hyperlink{struct_rectangle}{Rectangle}}}]{rect}{}\end{DoxyParamCaption})}
+
+
+
+Ajoute un rectangle à la pile. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rects} & -\/ Pointeur sur la structure \doxylink{struct_rectangles}{Rectangles}. \\
+\hline
+{\em rect} & -\/ Le rectangle à ajouter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool -\/ Vrai si le rectangle a été ajouté, faux en cas d\textquotesingle{}erreur.
+\end{DoxyReturn}
+Gère la sémantique du tampon circulaire. Quand la pile est pleine, les anciens rectangles sont écrasés. \Hypertarget{rectangle_8c_a2c1a7c10131d0b1ac05a15424a190936}\index{rectangle.c@{rectangle.c}!rectangles\_push\_if\_intersect@{rectangles\_push\_if\_intersect}}
+\index{rectangles\_push\_if\_intersect@{rectangles\_push\_if\_intersect}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangles\_push\_if\_intersect()}{rectangles\_push\_if\_intersect()}}
+{\footnotesize\ttfamily \label{rectangle_8c_a2c1a7c10131d0b1ac05a15424a190936} 
+\doxymbox{\hyperlink{rectangle_8h_a8725f4b1f6bb4ae6a2b38d6273bb61af}{Rect\+Add\+Result}} rectangles\+\_\+push\+\_\+if\+\_\+intersect (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}}]{rects}{, }\item[{const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}}]{rect}{}\end{DoxyParamCaption})}
+
+
+
+Ajoute un rectangle à la pile s\textquotesingle{}il croise avec le rectangle supérieur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rects} & -\/ Pointeur sur la structure \doxylink{struct_rectangles}{Rectangles}. \\
+\hline
+{\em rect} & -\/ Le rectangle à tester et potentiellement ajouter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\doxylink{rectangle_8h_a8725f4b1f6bb4ae6a2b38d6273bb61af}{Rect\+Add\+Result} -\/ Indique le succès, pas d\textquotesingle{}intersection ou erreur.
+\end{DoxyReturn}
+Si le rectangle croise avec le sommet de la pile, l\textquotesingle{}intersection est ajoutée comme un nouveau rectangle et peut être capturée à l\textquotesingle{}itération suivante. \begin{DoxyNote}{Note}
+C\textquotesingle{}est la fonction principale de logique de jeu pour déterminer les captures réussies. 
+\end{DoxyNote}
+\Hypertarget{rectangle_8c_a76b5911ef18623f17ea82d7767bc308f}\index{rectangle.c@{rectangle.c}!rectangles\_reset@{rectangles\_reset}}
+\index{rectangles\_reset@{rectangles\_reset}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangles\_reset()}{rectangles\_reset()}}
+{\footnotesize\ttfamily \label{rectangle_8c_a76b5911ef18623f17ea82d7767bc308f} 
+void rectangles\+\_\+reset (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}}]{rects}{}\end{DoxyParamCaption})}
+
+
+
+Réinitialise la pile de rectangles à son état initial. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rects} & -\/ Pointeur sur la structure \doxylink{struct_rectangles}{Rectangles} à réinitialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void
+\end{DoxyReturn}
+Efface la pile et recrée l\textquotesingle{}ensemble par défaut des rectangles initiaux. N\textquotesingle{}utilise pas la mémoire allouée. \Hypertarget{rectangle_8c_a9bd44c2754e57f3de2047fe50d4b7fe3}\index{rectangle.c@{rectangle.c}!rectangles\_top@{rectangles\_top}}
+\index{rectangles\_top@{rectangles\_top}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangles\_top()}{rectangles\_top()}}
+{\footnotesize\ttfamily \label{rectangle_8c_a9bd44c2754e57f3de2047fe50d4b7fe3} 
+const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*} rectangles\+\_\+top (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}}]{rects}{}\end{DoxyParamCaption})}
+
+
+
+Obtient le rectangle supérieur (le plus récemment ajouté). 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rects} & -\/ Pointeur sur la structure \doxylink{struct_rectangles}{Rectangles}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+const Rectangle\texorpdfstring{$\ast$}{*} -\/ Pointeur sur le rectangle supérieur, ou NULL si la pile est vide. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Le pointeur retourné pointe vers des données internes et ne doit pas être modifié. 
+\end{DoxyNote}
+\Hypertarget{rectangle_8c_abf33b831870774ad67334c06c64b2af0}\index{rectangle.c@{rectangle.c}!rectangles\_top\_intersection@{rectangles\_top\_intersection}}
+\index{rectangles\_top\_intersection@{rectangles\_top\_intersection}!rectangle.c@{rectangle.c}}
+\doxysubsubsection{\texorpdfstring{rectangles\_top\_intersection()}{rectangles\_top\_intersection()}}
+{\footnotesize\ttfamily \label{rectangle_8c_abf33b831870774ad67334c06c64b2af0} 
+bool rectangles\+\_\+top\+\_\+intersection (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_rectangles}{Rectangles}} \texorpdfstring{$\ast$}{*}}]{rects}{, }\item[{const \doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}}]{other}{, }\item[{\doxymbox{\hyperlink{struct_rectangle}{Rectangle}} \texorpdfstring{$\ast$}{*}}]{out}{}\end{DoxyParamCaption})}
+
+
+
+Calcule l\textquotesingle{}intersection du rectangle supérieur avec un autre rectangle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rects} & -\/ Pointeur sur la structure \doxylink{struct_rectangles}{Rectangles}. \\
+\hline
+{\em other} & -\/ L\textquotesingle{}autre rectangle à croiser. \\
+\hline
+{\em out} & -\/ \doxylink{struct_rectangle}{Rectangle} de sortie contenant l\textquotesingle{}intersection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool -\/ Vrai si l\textquotesingle{}intersection existe, faux sinon. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Un wrapper pratique autour de \doxylink{rectangle_8c_ac006b4ac53d15c4c0442547876f5b6ed}{rectangle\+\_\+intersection()}. 
+\end{DoxyNote}

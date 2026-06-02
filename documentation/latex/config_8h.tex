@@ -1,0 +1,154 @@
+\doxysection{Référence du fichier app/\+config.h}
+\hypertarget{config_8h}{}\label{config_8h}\index{app/config.h@{app/config.h}}
+
+
+Fichier principal de configuration de votre projet sur carte Nucléo STM32\+G431\+KB. Permet d\textquotesingle{}activer les différents modules logiciels à votre disposition.  
+
+
+{\ttfamily \+\#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{config_8h_a0539be032702009fb24beec89c6fa0c0}\label{config_8h_a0539be032702009fb24beec89c6fa0c0} 
+\+\#define {\bfseries LED\+\_\+\+GREEN\+\_\+\+PIN}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\Hypertarget{config_8h_a35bd7f0ad1339fa50073bc23bd963566}\label{config_8h_a35bd7f0ad1339fa50073bc23bd963566} 
+\+\#define {\bfseries LED\+\_\+\+GREEN\+\_\+\+GPIO}~GPIOB
+\item 
+\Hypertarget{config_8h_ac6407fe6d080f184fa323e3734d80b15}\label{config_8h_ac6407fe6d080f184fa323e3734d80b15} 
+\+\#define {\bfseries UART2\+\_\+\+ON\+\_\+\+PA3\+\_\+\+PA2}
+\item 
+\Hypertarget{config_8h_a0c83a77ed4956800d2be900f5fcc2207}\label{config_8h_a0c83a77ed4956800d2be900f5fcc2207} 
+\+\#define {\bfseries UART1\+\_\+\+ON\+\_\+\+PA10\+\_\+\+PA9}
+\item 
+\Hypertarget{config_8h_a837392f13b258c60487cb9b15bbbfd0c}\label{config_8h_a837392f13b258c60487cb9b15bbbfd0c} 
+\+\#define {\bfseries USE\+\_\+\+BSP\+\_\+\+TIMER}~1
+\item 
+\Hypertarget{config_8h_a4330119d503803ecb5fc6ee60f88f491}\label{config_8h_a4330119d503803ecb5fc6ee60f88f491} 
+\+\#define {\bfseries USE\+\_\+\+BSP\+\_\+\+EXTIT}~1
+\item 
+\Hypertarget{config_8h_afacc6ecc4901a729fac01bbea03deb51}\label{config_8h_afacc6ecc4901a729fac01bbea03deb51} 
+\+\#define {\bfseries USE\+\_\+\+RTC}~0
+\item 
+\Hypertarget{config_8h_aaa136cd92f8e65d59edb1b0b4b99f7df}\label{config_8h_aaa136cd92f8e65d59edb1b0b4b99f7df} 
+\+\#define {\bfseries USE\+\_\+\+ADC}~0
+\item 
+\Hypertarget{config_8h_acd1a09aeb92cb81a918863bf440a607b}\label{config_8h_acd1a09aeb92cb81a918863bf440a607b} 
+\+\#define {\bfseries USE\+\_\+\+IN1}~1
+\item 
+\Hypertarget{config_8h_ad5484f32606a746f55c5939581b5820f}\label{config_8h_ad5484f32606a746f55c5939581b5820f} 
+\+\#define {\bfseries USE\+\_\+\+IN2}~1
+\item 
+\Hypertarget{config_8h_a4c0c97061e8b6ef7faf508b446aec049}\label{config_8h_a4c0c97061e8b6ef7faf508b446aec049} 
+\+\#define {\bfseries USE\+\_\+\+IN3}~0
+\item 
+\Hypertarget{config_8h_a7ce1056d589584acd86e239c42edbd38}\label{config_8h_a7ce1056d589584acd86e239c42edbd38} 
+\+\#define {\bfseries USE\+\_\+\+IN4}~0
+\item 
+\Hypertarget{config_8h_a999c7ee747d8dafe60637baba03a3f38}\label{config_8h_a999c7ee747d8dafe60637baba03a3f38} 
+\+\#define {\bfseries USE\+\_\+\+IN10}~0
+\item 
+\Hypertarget{config_8h_a9ec50f361bf59a286d6f4920413ee1eb}\label{config_8h_a9ec50f361bf59a286d6f4920413ee1eb} 
+\+\#define {\bfseries USE\+\_\+\+IN13}~0
+\item 
+\Hypertarget{config_8h_a25036d0271f38e2ebfb1a9b3cab953d2}\label{config_8h_a25036d0271f38e2ebfb1a9b3cab953d2} 
+\+\#define {\bfseries USE\+\_\+\+IN17}~0
+\item 
+\Hypertarget{config_8h_a4731191921a5408ca8a3c06409d2e8c9}\label{config_8h_a4731191921a5408ca8a3c06409d2e8c9} 
+\+\#define {\bfseries USE\+\_\+\+DAC}~0
+\item 
+\Hypertarget{config_8h_a15b71b6ebf1fb67ee009445dc781f412}\label{config_8h_a15b71b6ebf1fb67ee009445dc781f412} 
+\+\#define {\bfseries USE\+\_\+\+ILI9341}~1
+\item 
+\Hypertarget{config_8h_aed04f9e1f860acd98ea90ba2fac27d92}\label{config_8h_aed04f9e1f860acd98ea90ba2fac27d92} 
+\+\#define {\bfseries USE\+\_\+\+XPT2046}~1
+\item 
+\Hypertarget{config_8h_a8c8508975dbd69b42f0a32a9c4cbf9bd}\label{config_8h_a8c8508975dbd69b42f0a32a9c4cbf9bd} 
+\+\#define {\bfseries USE\+\_\+\+FONT7x10}~0
+\item 
+\Hypertarget{config_8h_a1b0d6e01ca3a1a1421c72e1b132aeaa3}\label{config_8h_a1b0d6e01ca3a1a1421c72e1b132aeaa3} 
+\+\#define {\bfseries USE\+\_\+\+FONT11x18}~1
+\item 
+\Hypertarget{config_8h_ab48fd4365b00a178471773bc5e54fade}\label{config_8h_ab48fd4365b00a178471773bc5e54fade} 
+\+\#define {\bfseries USE\+\_\+\+FONT16x26}~1
+\item 
+\Hypertarget{config_8h_a5d43be38108cf5b44434cd9a9db7748e}\label{config_8h_a5d43be38108cf5b44434cd9a9db7748e} 
+\+\#define {\bfseries USE\+\_\+\+EPAPER}~0
+\item 
+\Hypertarget{config_8h_a0a06f810121b1b478c8a1360b8028c8b}\label{config_8h_a0a06f810121b1b478c8a1360b8028c8b} 
+\+\#define {\bfseries USE\+\_\+\+WS2812}~0
+\item 
+\Hypertarget{config_8h_ae25eee2435f8d718ba539445d17803ad}\label{config_8h_ae25eee2435f8d718ba539445d17803ad} 
+\+\#define {\bfseries USE\+\_\+\+MPU6050}~0
+\item 
+\Hypertarget{config_8h_a3cf214e322c86548ae33500ff6dbfb6e}\label{config_8h_a3cf214e322c86548ae33500ff6dbfb6e} 
+\+\#define {\bfseries USE\+\_\+\+APDS9960}~0
+\item 
+\Hypertarget{config_8h_aa08c44e91364eff8bc5b05624c8937e2}\label{config_8h_aa08c44e91364eff8bc5b05624c8937e2} 
+\+\#define {\bfseries USE\+\_\+\+BMP180}~0
+\item 
+\Hypertarget{config_8h_a0dc9bcfdc6e1389acf8634c9d024228f}\label{config_8h_a0dc9bcfdc6e1389acf8634c9d024228f} 
+\+\#define {\bfseries USE\+\_\+\+BH1750\+FVI}~0
+\item 
+\Hypertarget{config_8h_ab89947975b1e285dc2f5124b7acb2ff1}\label{config_8h_ab89947975b1e285dc2f5124b7acb2ff1} 
+\+\#define {\bfseries USE\+\_\+\+DHT11}~0
+\item 
+\Hypertarget{config_8h_ad1f725205fb41df71f263324446af858}\label{config_8h_ad1f725205fb41df71f263324446af858} 
+\+\#define {\bfseries USE\+\_\+\+DS18\+B20}~0
+\item 
+\Hypertarget{config_8h_a7b402451e0ce97dedba5b386c7e25c8a}\label{config_8h_a7b402451e0ce97dedba5b386c7e25c8a} 
+\+\#define {\bfseries USE\+\_\+\+YX6300}~0
+\item 
+\Hypertarget{config_8h_a33158fd7d381ab76a55cf2795553294a}\label{config_8h_a33158fd7d381ab76a55cf2795553294a} 
+\+\#define {\bfseries USE\+\_\+\+MATRIX\+\_\+\+KEYBOARD}~0
+\item 
+\Hypertarget{config_8h_a5306f27f2b580e8450b67153a866de92}\label{config_8h_a5306f27f2b580e8450b67153a866de92} 
+\+\#define {\bfseries USE\+\_\+\+HCSR04}~0
+\item 
+\Hypertarget{config_8h_a977812fb7d827ec35754b042d301137d}\label{config_8h_a977812fb7d827ec35754b042d301137d} 
+\+\#define {\bfseries USE\+\_\+\+GPS}~0
+\item 
+\Hypertarget{config_8h_a8c84256cde1335b0fb37f1c82bdcefb1}\label{config_8h_a8c84256cde1335b0fb37f1c82bdcefb1} 
+\+\#define {\bfseries USE\+\_\+\+LD19}~0
+\item 
+\Hypertarget{config_8h_aef39c5a17e5f46341d9913c7192bd87e}\label{config_8h_aef39c5a17e5f46341d9913c7192bd87e} 
+\+\#define {\bfseries USE\+\_\+\+NFC03\+A1}~0
+\item 
+\Hypertarget{config_8h_aedc588909d706a0c330f1c1c1f857bf4}\label{config_8h_aedc588909d706a0c330f1c1c1f857bf4} 
+\+\#define {\bfseries USE\+\_\+\+VL53\+L0}~0
+\item 
+\Hypertarget{config_8h_a9f9346c8ab4d16e068a11ccd03db2858}\label{config_8h_a9f9346c8ab4d16e068a11ccd03db2858} 
+\+\#define {\bfseries USE\+\_\+\+MCP23017}~0
+\item 
+\Hypertarget{config_8h_a23a7e96e89664f2539ebe845a5fc0c07}\label{config_8h_a23a7e96e89664f2539ebe845a5fc0c07} 
+\+\#define {\bfseries USE\+\_\+\+MCP23\+S17}~0
+\item 
+\Hypertarget{config_8h_a946297d7d599e95275c0615c9ee92853}\label{config_8h_a946297d7d599e95275c0615c9ee92853} 
+\+\#define {\bfseries USE\+\_\+\+SD\+\_\+\+CARD}~0
+\item 
+\Hypertarget{config_8h_a245635132118568c39098a87594244a9}\label{config_8h_a245635132118568c39098a87594244a9} 
+\+\#define {\bfseries USE\+\_\+\+MOTOR\+\_\+\+DC}~0
+\item 
+\Hypertarget{config_8h_ad49930ef15af40fee393f8bd82881664}\label{config_8h_ad49930ef15af40fee393f8bd82881664} 
+\+\#define {\bfseries USE\+\_\+\+I2C}~0
+\item 
+\Hypertarget{config_8h_afa3215f0aa766367f5d34bee80929152}\label{config_8h_afa3215f0aa766367f5d34bee80929152} 
+\+\#define {\bfseries I2\+C\+\_\+\+TIMEOUT}~5
+\item 
+\Hypertarget{config_8h_a1acd02cc5bc9a5945addaf6e4f65d39a}\label{config_8h_a1acd02cc5bc9a5945addaf6e4f65d39a} 
+\+\#define {\bfseries USE\+\_\+\+SPI}~1
+\item 
+\Hypertarget{config_8h_aa4308ba8ad3d4954fc5c60dc378cb728}\label{config_8h_aa4308ba8ad3d4954fc5c60dc378cb728} 
+\+\#define {\bfseries USE\+\_\+\+TESTBOARD}~0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier principal de configuration de votre projet sur carte Nucléo STM32\+G431\+KB. Permet d\textquotesingle{}activer les différents modules logiciels à votre disposition. 
+
+\begin{DoxyAuthor}{Auteur}
+jjo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 29, 2024  
+\end{DoxyDate}

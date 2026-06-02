@@ -1,0 +1,170 @@
+\doxysection{Référence du fichier app/\+game.c}
+\hypertarget{game_8c}{}\label{game_8c}\index{app/game.c@{app/game.c}}
+
+
+Implémentation de la logique de jeu.  
+
+
+{\ttfamily \+\#include "{}game.\+h"{}}\newline
+{\ttfamily \+\#include "{}stm32g4\+\_\+gpio.\+h"{}}\newline
+{\ttfamily \+\#include "{}rectangle.\+h"{}}\newline
+{\ttfamily \+\#include "{}tft\+\_\+ili9341/\+stm32g4\+\_\+xpt2046.\+h"{}}\newline
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{game_8c_a1fc72b1cefe1d6423da725295077a073}{game\+\_\+init}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game)
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}état du jeu. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{game_8c_afdc20b2499a550936dc01e125b493285}{game\+\_\+free}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game)
+\begin{DoxyCompactList}\small\item\em Libère toutes les ressources allouées au jeu. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{game_8c_a8e246714cfe5d69632e88a9acb5954f9}{game\+\_\+reset}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game)
+\begin{DoxyCompactList}\small\item\em Réinitialise le jeu à son état initial. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{game_8c_ab2411c4f679be75f1fdf346c664c7421}{game\+\_\+play}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game, \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}} difficulty)
+\begin{DoxyCompactList}\small\item\em Exécute la boucle de jeu principale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Implémentation de la logique de jeu. 
+
+Implémente les mécaniques principales du jeu, y compris l\textquotesingle{}initialisation, la gestion d\textquotesingle{}état, la gestion de l\textquotesingle{}entrée tactile, le mouvement du rectangle et la détection de collision. 
+
+\label{game_8c_doc-func-members}
+\Hypertarget{game_8c_doc-func-members}
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{game_8c_afdc20b2499a550936dc01e125b493285}\index{game.c@{game.c}!game\_free@{game\_free}}
+\index{game\_free@{game\_free}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{game\_free()}{game\_free()}}
+{\footnotesize\ttfamily \label{game_8c_afdc20b2499a550936dc01e125b493285} 
+void game\+\_\+free (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{}\end{DoxyParamCaption})}
+
+
+
+Libère toutes les ressources allouées au jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à libérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Après l\textquotesingle{}appel de cette fonction, la structure de jeu n\textquotesingle{}est plus valide jusqu\textquotesingle{}à la réinitialisation.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à libérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Après l\textquotesingle{}appel de cette fonction, la structure de jeu n\textquotesingle{}est plus valide tant qu\textquotesingle{}elle n\textquotesingle{}est pas réinitialisée. 
+\end{DoxyNote}
+\Hypertarget{game_8c_a1fc72b1cefe1d6423da725295077a073}\index{game.c@{game.c}!game\_init@{game\_init}}
+\index{game\_init@{game\_init}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{game\_init()}{game\_init()}}
+{\footnotesize\ttfamily \label{game_8c_a1fc72b1cefe1d6423da725295077a073} 
+bool game\+\_\+init (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{}\end{DoxyParamCaption})}
+
+
+
+Initialise l\textquotesingle{}état du jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à initialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool -\/ Vrai si l\textquotesingle{}initialisation a réussi, faux sinon. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Configure la position initiale du rectangle, la taille et crée la pile de rectangles.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à initialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool -\/ Vrai si l\textquotesingle{}initialisation a réussi, faux sinon. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Doit être appelée avant toute autre fonction de jeu. Définit les valeurs initiales pour la position, la taille et crée la pile de rectangles. 
+\end{DoxyNote}
+\Hypertarget{game_8c_ab2411c4f679be75f1fdf346c664c7421}\index{game.c@{game.c}!game\_play@{game\_play}}
+\index{game\_play@{game\_play}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{game\_play()}{game\_play()}}
+{\footnotesize\ttfamily \label{game_8c_ab2411c4f679be75f1fdf346c664c7421} 
+void game\+\_\+play (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{, }\item[{\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}}}]{difficulty}{}\end{DoxyParamCaption})}
+
+
+
+Exécute la boucle de jeu principale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game}. \\
+\hline
+{\em difficulty} & -\/ Le niveau de difficulté sélectionné. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void
+\end{DoxyReturn}
+Contrôle la boucle de jeu incluant :\+
+\begin{DoxyItemize}
+\item Affichage des rectangles empilés
+\item Mise à jour du mouvement du rectangle
+\item Traitement de l\textquotesingle{}entrée tactile
+\item Fréquence d\textquotesingle{}images adaptive selon la difficulté et le score \begin{DoxyNote}{Note}
+La fréquence d\textquotesingle{}images diminue à mesure que le score augmente, rendant le jeu plus difficile. La boucle continue jusqu\textquotesingle{}à ce que le joueur échoue à capturer le rectangle.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game}. \\
+\hline
+{\em difficulty} & -\/ Le niveau de difficulté sélectionné. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette fonction exécute le jeu jusqu\textquotesingle{}à ce que le joueur échoue à capturer le rectangle. Gère l\textquotesingle{}entrée tactile, le mouvement du rectangle, le rendu et la détection de collision. La difficulté affecte la vitesse du mouvement du rectangle. 
+\end{DoxyNote}
+
+\end{DoxyItemize}\Hypertarget{game_8c_a8e246714cfe5d69632e88a9acb5954f9}\index{game.c@{game.c}!game\_reset@{game\_reset}}
+\index{game\_reset@{game\_reset}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{game\_reset()}{game\_reset()}}
+{\footnotesize\ttfamily \label{game_8c_a8e246714cfe5d69632e88a9acb5954f9} 
+void game\+\_\+reset (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{}\end{DoxyParamCaption})}
+
+
+
+Réinitialise le jeu à son état initial. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à réinitialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Efface le score, réinitialise la position et la taille du rectangle en mouvement, et réinitialise la pile de rectangles.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} à réinitialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Efface le score, réinitialise la position et la taille du rectangle en mouvement, et réinitialise la pile de rectangles. N\textquotesingle{}utilise pas la mémoire allouée ; utilisez \doxylink{game_8h_afdc20b2499a550936dc01e125b493285}{game\+\_\+free()} pour cela. 
+\end{DoxyNote}

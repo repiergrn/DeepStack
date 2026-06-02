@@ -1,0 +1,95 @@
+\doxysection{Référence du fichier app/\+flash\+\_\+storage.c}
+\hypertarget{flash__storage_8c}{}\label{flash__storage_8c}\index{app/flash\_storage.c@{app/flash\_storage.c}}
+
+
+Implémentation du stockage en mémoire flash.  
+
+
+{\ttfamily \+\#include "{}flash\+\_\+storage.\+h"{}}\newline
+{\ttfamily \+\#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{flash__storage_8c_a94630370ae389fb1189282fa0742f310}\label{flash__storage_8c_a94630370ae389fb1189282fa0742f310} 
+\+\#define {\bfseries MAGIC}~0x\+DEADBEEF
+\begin{DoxyCompactList}\small\item\em Nombre magique pour identifier les données flash valides. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{flash__storage_8c_a73e9dd64adc1f55f9d7e7c38183f0a5f}{flash\+\_\+read\+\_\+best\+\_\+score}} (\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}} difficulty)
+\begin{DoxyCompactList}\small\item\em Lit le meilleur score d\textquotesingle{}un niveau de difficulté depuis la mémoire flash. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{flash__storage_8c_a5176fab2c9556a5ed8a7a808cae50f8f}{flash\+\_\+write\+\_\+best\+\_\+score}} (\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}} difficulty, uint32\+\_\+t score)
+\begin{DoxyCompactList}\small\item\em Écrit le meilleur score d\textquotesingle{}un niveau de difficulté dans la mémoire flash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Implémentation du stockage en mémoire flash. 
+
+Implémente le stockage persistant des meilleurs scores dans la mémoire flash du microcontrôleur en utilisant la technique d\textquotesingle{}émulation EEPROM. 
+
+\label{flash__storage_8c_doc-func-members}
+\Hypertarget{flash__storage_8c_doc-func-members}
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{flash__storage_8c_a73e9dd64adc1f55f9d7e7c38183f0a5f}\index{flash\_storage.c@{flash\_storage.c}!flash\_read\_best\_score@{flash\_read\_best\_score}}
+\index{flash\_read\_best\_score@{flash\_read\_best\_score}!flash\_storage.c@{flash\_storage.c}}
+\doxysubsubsection{\texorpdfstring{flash\_read\_best\_score()}{flash\_read\_best\_score()}}
+{\footnotesize\ttfamily \label{flash__storage_8c_a73e9dd64adc1f55f9d7e7c38183f0a5f} 
+uint32\+\_\+t flash\+\_\+read\+\_\+best\+\_\+score (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}}}]{difficulty}{}\end{DoxyParamCaption})}
+
+
+
+Lit le meilleur score d\textquotesingle{}un niveau de difficulté depuis la mémoire flash. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em difficulty} & -\/ Le niveau de difficulté à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+uint32\+\_\+t -\/ Le meilleur score, ou 0 si la flash n\textquotesingle{}est pas initialisée ou corrompue.
+\end{DoxyReturn}
+Valide le nombre magique et la plage de scores avant de retourner la valeur. Si la mémoire flash n\textquotesingle{}a pas été initialisée, retourne 0. \begin{DoxyNote}{Note}
+Les scores supérieurs à 9999 sont traités comme une corruption et retournent 0. 
+\end{DoxyNote}
+\Hypertarget{flash__storage_8c_a5176fab2c9556a5ed8a7a808cae50f8f}\index{flash\_storage.c@{flash\_storage.c}!flash\_write\_best\_score@{flash\_write\_best\_score}}
+\index{flash\_write\_best\_score@{flash\_write\_best\_score}!flash\_storage.c@{flash\_storage.c}}
+\doxysubsubsection{\texorpdfstring{flash\_write\_best\_score()}{flash\_write\_best\_score()}}
+{\footnotesize\ttfamily \label{flash__storage_8c_a5176fab2c9556a5ed8a7a808cae50f8f} 
+void flash\+\_\+write\+\_\+best\+\_\+score (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}}}]{difficulty}{, }\item[{uint32\+\_\+t}]{score}{}\end{DoxyParamCaption})}
+
+
+
+Écrit le meilleur score d\textquotesingle{}un niveau de difficulté dans la mémoire flash. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em difficulty} & -\/ Le niveau de difficulté à mettre à jour. \\
+\hline
+{\em score} & -\/ Le score à stocker. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void
+\end{DoxyReturn}
+Met à jour le meilleur score pour la difficulté spécifiée et préserve les scores des autres niveaux de difficulté. Efface et reprogramme la page entière de flash pour maintenir la cohérence des données. \begin{DoxyNote}{Note}
+Cette fonction désactive temporairement la protection flash, modifie la page entière et réactive ensuite la protection.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em difficulty} & -\/ Le niveau de difficulté à mettre à jour. \\
+\hline
+{\em score} & -\/ Le score à stocker. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void
+\end{DoxyReturn}
+Met à jour le meilleur score pour la difficulté spécifiée et préserve les scores des autres niveaux de difficulté. Efface et reprogramme la page entière de flash pour maintenir la cohérence des données. \begin{DoxyNote}{Note}
+Disposition de la page flash 63 :\+
+\begin{DoxyItemize}
+\item Décalage 0x00 :\+ Nombre magique (0x\+DEADBEEF, 4 octets)
+\item Décalage 0x08 :\+ Meilleur score mode Facile (4 octets)
+\item Décalage 0x10 :\+ Meilleur score mode Moyen (4 octets)
+\item Décalage 0x18 :\+ Meilleur score mode Difficile (4 octets) 
+\end{DoxyItemize}
+\end{DoxyNote}

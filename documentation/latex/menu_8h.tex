@@ -1,0 +1,64 @@
+\doxysection{Référence du fichier app/\+menu.h}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{app/menu.h@{app/menu.h}}
+
+
+Interface du menu et de l\textquotesingle{}interface utilisateur.  
+
+
+{\ttfamily \+\#include "{}game.\+h"{}}\newline
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{menu_8h_a1d3c4218d9474a2c5df18fd62000ef4a}{show\+\_\+score\+\_\+screen}} (\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}game, \doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}} difficulty)
+\begin{DoxyCompactList}\small\item\em Affiche le score final et les meilleurs scores sur l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}} \doxymbox{\hyperlink{menu_8h_a265b101a12a48b31e94c1bd00d46e7c7}{show\+\_\+game\+\_\+menu}} (void)
+\begin{DoxyCompactList}\small\item\em Affiche le menu de sélection de difficulté. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Interface du menu et de l\textquotesingle{}interface utilisateur. 
+
+Fournit les fonctions pour afficher le menu du jeu, la sélection de difficulté et l\textquotesingle{}écran d\textquotesingle{}affichage du score. 
+
+\label{menu_8h_doc-func-members}
+\Hypertarget{menu_8h_doc-func-members}
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{menu_8h_a265b101a12a48b31e94c1bd00d46e7c7}\index{menu.h@{menu.h}!show\_game\_menu@{show\_game\_menu}}
+\index{show\_game\_menu@{show\_game\_menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{show\_game\_menu()}{show\_game\_menu()}}
+{\footnotesize\ttfamily \label{menu_8h_a265b101a12a48b31e94c1bd00d46e7c7} 
+\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}} show\+\_\+game\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le menu de sélection de difficulté. 
+
+\begin{DoxyReturn}{Renvoie}
+\doxylink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty} -\/ Le niveau de difficulté sélectionné.
+\end{DoxyReturn}
+Affiche le menu interactif avec trois boutons de difficulté (Facile, Moyen, Difficile) et un bouton PLAY. L\textquotesingle{}utilisateur sélectionne la difficulté en appuyant sur les boutons et confirme en appuyant sur PLAY. \begin{DoxyNote}{Note}
+Le menu affiche des blocs de différentes tailles pour représenter visuellement les niveaux de difficulté et la progression du jeu. 
+\end{DoxyNote}
+\Hypertarget{menu_8h_a1d3c4218d9474a2c5df18fd62000ef4a}\index{menu.h@{menu.h}!show\_score\_screen@{show\_score\_screen}}
+\index{show\_score\_screen@{show\_score\_screen}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{show\_score\_screen()}{show\_score\_screen()}}
+{\footnotesize\ttfamily \label{menu_8h_a1d3c4218d9474a2c5df18fd62000ef4a} 
+void show\+\_\+score\+\_\+screen (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{, }\item[{\doxymbox{\hyperlink{game_8h_a022afd659100232d71e5cf905098a11a}{Game\+Difficulty}}}]{difficulty}{}\end{DoxyParamCaption})}
+
+
+
+Affiche le score final et les meilleurs scores sur l\textquotesingle{}écran. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & -\/ Pointeur sur la structure \doxylink{struct_game}{Game} contenant le score actuel. \\
+\hline
+{\em difficulty} & -\/ Le niveau de difficulté qui vient d\textquotesingle{}être complété. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void
+\end{DoxyReturn}
+Affiche l\textquotesingle{}écran "{}\+GAME OVER"{} avec le score actuel, le meilleur score pour la difficulté sélectionnée et sauvegarde les nouveaux meilleurs scores dans la mémoire flash. Attend l\textquotesingle{}entrée tactile de l\textquotesingle{}utilisateur avant de revenir. \begin{DoxyNote}{Note}
+Compare également et met à jour le meilleur score dans la mémoire flash si applicable. 
+\end{DoxyNote}

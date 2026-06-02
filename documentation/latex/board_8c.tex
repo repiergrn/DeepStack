@@ -1,0 +1,51 @@
+\doxysection{Référence du fichier app/\+board.c}
+\hypertarget{board_8c}{}\label{board_8c}\index{app/board.c@{app/board.c}}
+
+
+Implémentation d\textquotesingle{}initialisation de la carte.  
+
+
+{\ttfamily \+\#include "{}board.\+h"{}}\newline
+{\ttfamily \+\#include "{}stm32g4\+\_\+gpio.\+h"{}}\newline
+{\ttfamily \+\#include "{}stm32g4\+\_\+sys.\+h"{}}\newline
+{\ttfamily \+\#include "{}tft\+\_\+ili9341/\+stm32g4\+\_\+ili9341.\+h"{}}\newline
+{\ttfamily \+\#include "{}tft\+\_\+ili9341/\+stm32g4\+\_\+xpt2046.\+h"{}}\newline
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{board_8c_a916f2adc2080b4fe88034086d107a8dc}{board\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise le matériel de la carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Implémentation d\textquotesingle{}initialisation de la carte. 
+
+Implémente l\textquotesingle{}initialisation du matériel pour le microcontrôleur STM32\+G431 y compris les périphériques GPIO, UART et affichage. 
+
+\label{board_8c_doc-func-members}
+\Hypertarget{board_8c_doc-func-members}
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{board_8c_a916f2adc2080b4fe88034086d107a8dc}\index{board.c@{board.c}!board\_init@{board\_init}}
+\index{board\_init@{board\_init}!board.c@{board.c}}
+\doxysubsubsection{\texorpdfstring{board\_init()}{board\_init()}}
+{\footnotesize\ttfamily \label{board_8c_a916f2adc2080b4fe88034086d107a8dc} 
+void board\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise le matériel de la carte. 
+
+Effectue toutes les étapes d\textquotesingle{}initialisation nécessaires :\+
+\begin{DoxyItemize}
+\item Initialisation HAL
+\item Configuration UART2 (115200 bauds)
+\item Configuration GPIO pour LED
+\item Initialisation de l\textquotesingle{}afficheur TFT ILI9341
+\item Initialisation du contrôleur tactile XPT2046 \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Doit être appelée une seule fois au démarrage du système avant toute autre opération. 
+\end{DoxyNote}
+
+\end{DoxyItemize}

@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeepStack: Référence du fichier app/game.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">DeepStack
+   </div>
+   <div id="projectbrief">Jeu Stack - Jeu embarqué pour microcontrôleur STM32G431KB</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('game_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier game.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implémentation de la logique de jeu.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
+<code>#include &quot;stm32g4_gpio.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rectangle_8h_source.html">rectangle.h</a>&quot;</code><br />
+<code>#include &quot;tft_ili9341/stm32g4_xpt2046.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a1fc72b1cefe1d6423da725295077a073" id="r_a1fc72b1cefe1d6423da725295077a073"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1fc72b1cefe1d6423da725295077a073">game_init</a> (<a class="el" href="struct_game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a1fc72b1cefe1d6423da725295077a073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise l'état du jeu.  <br /></td></tr>
+<tr class="memitem:afdc20b2499a550936dc01e125b493285" id="r_afdc20b2499a550936dc01e125b493285"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afdc20b2499a550936dc01e125b493285">game_free</a> (<a class="el" href="struct_game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:afdc20b2499a550936dc01e125b493285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère toutes les ressources allouées au jeu.  <br /></td></tr>
+<tr class="memitem:a8e246714cfe5d69632e88a9acb5954f9" id="r_a8e246714cfe5d69632e88a9acb5954f9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8e246714cfe5d69632e88a9acb5954f9">game_reset</a> (<a class="el" href="struct_game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a8e246714cfe5d69632e88a9acb5954f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réinitialise le jeu à son état initial.  <br /></td></tr>
+<tr class="memitem:ab2411c4f679be75f1fdf346c664c7421" id="r_ab2411c4f679be75f1fdf346c664c7421"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab2411c4f679be75f1fdf346c664c7421">game_play</a> (<a class="el" href="struct_game.html">Game</a> *game, <a class="el" href="game_8h.html#a022afd659100232d71e5cf905098a11a">GameDifficulty</a> difficulty)</td></tr>
+<tr class="memdesc:ab2411c4f679be75f1fdf346c664c7421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute la boucle de jeu principale.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Implémentation de la logique de jeu. </p>
+<p>Implémente les mécaniques principales du jeu, y compris l'initialisation, la gestion d'état, la gestion de l'entrée tactile, le mouvement du rectangle et la détection de collision. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="afdc20b2499a550936dc01e125b493285" name="afdc20b2499a550936dc01e125b493285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc20b2499a550936dc01e125b493285">&#9670;&#160;</a></span>game_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *</td>          <td class="paramname"><span class="paramname"><em>game</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libère toutes les ressources allouées au jeu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- Pointeur sur la structure <a class="el" href="struct_game.html" title="Représente l&#39;état complet du jeu.">Game</a> à libérer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Après l'appel de cette fonction, la structure de jeu n'est plus valide jusqu'à la réinitialisation.</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- Pointeur sur la structure <a class="el" href="struct_game.html" title="Représente l&#39;état complet du jeu.">Game</a> à libérer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Après l'appel de cette fonction, la structure de jeu n'est plus valide tant qu'elle n'est pas réinitialisée. </dd></dl>
+
+</div>
+</div>
+<a id="a1fc72b1cefe1d6423da725295077a073" name="a1fc72b1cefe1d6423da725295077a073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc72b1cefe1d6423da725295077a073">&#9670;&#160;</a></span>game_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool game_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *</td>          <td class="paramname"><span class="paramname"><em>game</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise l'état du jeu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- Pointeur sur la structure <a class="el" href="struct_game.html" title="Représente l&#39;état complet du jeu.">Game</a> à initialiser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool - Vrai si l'initialisation a réussi, faux sinon. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Configure la position initiale du rectangle, la taille et crée la pile de rectangles.</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- Pointeur sur la structure <a class="el" href="struct_game.html" title="Représente l&#39;état complet du jeu.">Game</a> à initialiser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool - Vrai si l'initialisation a réussi, faux sinon. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Doit être appelée avant toute autre fonction de jeu. Définit les valeurs initiales pour la position, la taille et crée la pile de rectangles. </dd></dl>
+
+</div>
+</div>
+<a id="ab2411c4f679be75f1fdf346c664c7421" name="ab2411c4f679be75f1fdf346c664c7421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2411c4f679be75f1fdf346c664c7421">&#9670;&#160;</a></span>game_play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game_play </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *</td>          <td class="paramname"><span class="paramname"><em>game</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="game_8h.html#a022afd659100232d71e5cf905098a11a">GameDifficulty</a></td>          <td class="paramname"><span class="paramname"><em>difficulty</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exécute la boucle de jeu principale. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- Pointeur sur la structure <a class="el" href="struct_game.html" title="Représente l&#39;état complet du jeu.">Game</a>. </td></tr>
+    <tr><td class="paramname">difficulty</td><td>- Le niveau de difficulté sélectionné. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void</dd></dl>
+<p>Contrôle la boucle de jeu incluant :</p><ul>
+<li>Affichage des rectangles empilés</li>
+<li>Mise à jour du mouvement du rectangle</li>
+<li>Traitement de l'entrée tactile</li>
+<li>Fréquence d'images adaptive selon la difficulté et le score <dl class="section note"><dt>Note</dt><dd>La fréquence d'images diminue à mesure que le score augmente, rendant le jeu plus difficile. La boucle continue jusqu'à ce que le joueur échoue à capturer le rectangle.</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- Pointeur sur la structure <a class="el" href="struct_game.html" title="Représente l&#39;état complet du jeu.">Game</a>. </td></tr>
+    <tr><td class="paramname">difficulty</td><td>- Le niveau de difficulté sélectionné. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Cette fonction exécute le jeu jusqu'à ce que le joueur échoue à capturer le rectangle. Gère l'entrée tactile, le mouvement du rectangle, le rendu et la détection de collision. La difficulté affecte la vitesse du mouvement du rectangle. </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="a8e246714cfe5d69632e88a9acb5954f9" name="a8e246714cfe5d69632e88a9acb5954f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e246714cfe5d69632e88a9acb5954f9">&#9670;&#160;</a></span>game_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game_reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *</td>          <td class="paramname"><span class="paramname"><em>game</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Réinitialise le jeu à son état initial. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- Pointeur sur la structure <a class="el" href="struct_game.html" title="Représente l&#39;état complet du jeu.">Game</a> à réinitialiser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Efface le score, réinitialise la position et la taille du rectangle en mouvement, et réinitialise la pile de rectangles.</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- Pointeur sur la structure <a class="el" href="struct_game.html" title="Représente l&#39;état complet du jeu.">Game</a> à réinitialiser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Efface le score, réinitialise la position et la taille du rectangle en mouvement, et réinitialise la pile de rectangles. N'utilise pas la mémoire allouée ; utilisez <a class="el" href="game_8h.html#afdc20b2499a550936dc01e125b493285" title="Libère toutes les ressources allouées au jeu.">game_free()</a> pour cela. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>app</b></li><li class="navelem"><a href="game_8c.html">game.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

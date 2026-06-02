@@ -1,0 +1,50 @@
+\doxysection{Référence du fichier app/\+main.c}
+\hypertarget{main_8c}{}\label{main_8c}\index{app/main.c@{app/main.c}}
+
+
+Point d\textquotesingle{}entrée principal de l\textquotesingle{}application Stack.  
+
+
+{\ttfamily \+\#include "{}board.\+h"{}}\newline
+{\ttfamily \+\#include "{}game.\+h"{}}\newline
+{\ttfamily \+\#include "{}menu.\+h"{}}\newline
+{\ttfamily \+\#include "{}rectangle.\+h"{}}\newline
+{\ttfamily \+\#include "{}stm32g4\+\_\+gpio.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Point d\textquotesingle{}entrée principal de l\textquotesingle{}application Stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Point d\textquotesingle{}entrée principal de l\textquotesingle{}application Stack. 
+
+Gère la machine à états principale qui contrôle le flux du jeu :\+ initialisation, affichage du menu, exécution du jeu et affichage du score. 
+
+\label{main_8c_doc-func-members}
+\Hypertarget{main_8c_doc-func-members}
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Point d\textquotesingle{}entrée principal de l\textquotesingle{}application Stack. 
+
+Initialise la carte et le jeu, puis entre dans la boucle de la machine à états qui gère les transitions entre l\textquotesingle{}initialisation, le menu, le jeu et l\textquotesingle{}affichage du score. \begin{DoxyReturn}{Renvoie}
+int -\/ Cette fonction ne revient jamais (boucle infinie). 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Le cycle de l\textquotesingle{}application :\+
+\begin{DoxyItemize}
+\item STATE\+\_\+\+INIT :\+ Initialiser la carte et le jeu
+\item STATE\+\_\+\+MENU :\+ Afficher le menu de sélection de difficulté
+\item STATE\+\_\+\+GAME :\+ Exécuter la logique du jeu
+\item STATE\+\_\+\+SCORE :\+ Afficher le score final et les meilleurs scores Le cycle revient ensuite à STATE\+\_\+\+MENU pour un nouveau jeu. 
+\end{DoxyItemize}
+\end{DoxyNote}
